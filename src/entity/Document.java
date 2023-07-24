@@ -5,6 +5,7 @@ package entity;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -39,9 +40,9 @@ public class Document {
 
     /**
      * <p>Classe Java pour anonymous complex type.
-     * 
+     *
      * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
-     * 
+     *
      * <pre>
      * &lt;complexType>
      *   &lt;complexContent>
@@ -282,8 +283,8 @@ public class Document {
      *   &lt;/complexContent>
      * &lt;/complexType>
      * </pre>
-     * 
-     * 
+     *
+     *
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
@@ -299,11 +300,11 @@ public class Document {
 
         /**
          * Obtient la valeur de la propri�t� grpHdr.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link Document.BkToCstmrDbtCdtNtfctn.GrpHdr }
-         *     
+         *
          */
         public Document.BkToCstmrDbtCdtNtfctn.GrpHdr getGrpHdr() {
             return grpHdr;
@@ -311,11 +312,11 @@ public class Document {
 
         /**
          * D�finit la valeur de la propri�t� grpHdr.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link Document.BkToCstmrDbtCdtNtfctn.GrpHdr }
-         *     
+         *
          */
         public void setGrpHdr(Document.BkToCstmrDbtCdtNtfctn.GrpHdr value) {
             this.grpHdr = value;
@@ -323,11 +324,11 @@ public class Document {
 
         /**
          * Obtient la valeur de la propri�t� ntfctn.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn }
-         *     
+         *
          */
         public Document.BkToCstmrDbtCdtNtfctn.Ntfctn getNtfctn() {
             return ntfctn;
@@ -335,11 +336,11 @@ public class Document {
 
         /**
          * D�finit la valeur de la propri�t� ntfctn.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn }
-         *     
+         *
          */
         public void setNtfctn(Document.BkToCstmrDbtCdtNtfctn.Ntfctn value) {
             this.ntfctn = value;
@@ -348,9 +349,9 @@ public class Document {
 
         /**
          * <p>Classe Java pour anonymous complex type.
-         * 
+         *
          * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
-         * 
+         *
          * <pre>
          * &lt;complexType>
          *   &lt;complexContent>
@@ -363,8 +364,8 @@ public class Document {
          *   &lt;/complexContent>
          * &lt;/complexType>
          * </pre>
-         * 
-         * 
+         *
+         *
          */
         @XmlAccessorType(XmlAccessType.FIELD)
         @XmlType(name = "", propOrder = {
@@ -382,7 +383,7 @@ public class Document {
 
             /**
              * Obtient la valeur de la propri�t� msgId.
-             * 
+             *
              */
             public int getMsgId() {
                 return msgId;
@@ -390,7 +391,7 @@ public class Document {
 
             /**
              * D�finit la valeur de la propri�t� msgId.
-             * 
+             *
              */
             public void setMsgId(int value) {
                 this.msgId = value;
@@ -398,11 +399,11 @@ public class Document {
 
             /**
              * Obtient la valeur de la propri�t� creDtTm.
-             * 
+             *
              * @return
              *     possible object is
              *     {@link XMLGregorianCalendar }
-             *     
+             *
              */
             public XMLGregorianCalendar getCreDtTm() {
                 return creDtTm;
@@ -410,11 +411,11 @@ public class Document {
 
             /**
              * D�finit la valeur de la propri�t� creDtTm.
-             * 
+             *
              * @param value
              *     allowed object is
              *     {@link XMLGregorianCalendar }
-             *     
+             *
              */
             public void setCreDtTm(XMLGregorianCalendar value) {
                 this.creDtTm = value;
@@ -425,9 +426,9 @@ public class Document {
 
         /**
          * <p>Classe Java pour anonymous complex type.
-         * 
+         *
          * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
-         * 
+         *
          * <pre>
          * &lt;complexType>
          *   &lt;complexContent>
@@ -646,8 +647,8 @@ public class Document {
          *   &lt;/complexContent>
          * &lt;/complexType>
          * </pre>
-         * 
-         * 
+         *
+         *
          */
         @XmlAccessorType(XmlAccessType.FIELD)
         @XmlType(name = "", propOrder = {
@@ -673,11 +674,11 @@ public class Document {
 
             /**
              * Obtient la valeur de la propri�t� id.
-             * 
+             *
              * @return
              *     possible object is
              *     {@link String }
-             *     
+             *
              */
             public String getId() {
                 return id;
@@ -685,11 +686,11 @@ public class Document {
 
             /**
              * D�finit la valeur de la propri�t� id.
-             * 
+             *
              * @param value
              *     allowed object is
              *     {@link String }
-             *     
+             *
              */
             public void setId(String value) {
                 this.id = value;
@@ -697,11 +698,11 @@ public class Document {
 
             /**
              * Obtient la valeur de la propri�t� creDtTm.
-             * 
+             *
              * @return
              *     possible object is
              *     {@link XMLGregorianCalendar }
-             *     
+             *
              */
             public XMLGregorianCalendar getCreDtTm() {
                 return creDtTm;
@@ -709,11 +710,11 @@ public class Document {
 
             /**
              * D�finit la valeur de la propri�t� creDtTm.
-             * 
+             *
              * @param value
              *     allowed object is
              *     {@link XMLGregorianCalendar }
-             *     
+             *
              */
             public void setCreDtTm(XMLGregorianCalendar value) {
                 this.creDtTm = value;
@@ -721,11 +722,11 @@ public class Document {
 
             /**
              * Obtient la valeur de la propri�t� acct.
-             * 
+             *
              * @return
              *     possible object is
              *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Acct }
-             *     
+             *
              */
             public Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Acct getAcct() {
                 return acct;
@@ -733,11 +734,11 @@ public class Document {
 
             /**
              * D�finit la valeur de la propri�t� acct.
-             * 
+             *
              * @param value
              *     allowed object is
              *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Acct }
-             *     
+             *
              */
             public void setAcct(Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Acct value) {
                 this.acct = value;
@@ -745,11 +746,11 @@ public class Document {
 
             /**
              * Obtient la valeur de la propri�t� txsSummry.
-             * 
+             *
              * @return
              *     possible object is
              *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.TxsSummry }
-             *     
+             *
              */
             public Document.BkToCstmrDbtCdtNtfctn.Ntfctn.TxsSummry getTxsSummry() {
                 return txsSummry;
@@ -757,11 +758,11 @@ public class Document {
 
             /**
              * D�finit la valeur de la propri�t� txsSummry.
-             * 
+             *
              * @param value
              *     allowed object is
              *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.TxsSummry }
-             *     
+             *
              */
             public void setTxsSummry(Document.BkToCstmrDbtCdtNtfctn.Ntfctn.TxsSummry value) {
                 this.txsSummry = value;
@@ -769,29 +770,29 @@ public class Document {
 
             /**
              * Gets the value of the ntry property.
-             * 
+             *
              * <p>
              * This accessor method returns a reference to the live list,
              * not a snapshot. Therefore any modification you make to the
              * returned list will be present inside the JAXB object.
              * This is why there is not a <CODE>set</CODE> method for the ntry property.
-             * 
+             *
              * <p>
              * For example, to add a new item, do as follows:
              * <pre>
              *    getNtry().add(newItem);
              * </pre>
-             * 
-             * 
+             *
+             *
              * <p>
              * Objects of the following type(s) are allowed in the list
              * {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry }
-             * 
-             * 
+             *
+             *
              */
             public List<Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry> getNtry() {
                 if (ntry == null) {
-                    ntry = new ArrayList<Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry>();
+                    ntry = new ArrayList<>();
                 }
                 return this.ntry;
             }
@@ -799,9 +800,9 @@ public class Document {
 
             /**
              * <p>Classe Java pour anonymous complex type.
-             * 
+             *
              * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
-             * 
+             *
              * <pre>
              * &lt;complexType>
              *   &lt;complexContent>
@@ -846,8 +847,8 @@ public class Document {
              *   &lt;/complexContent>
              * &lt;/complexType>
              * </pre>
-             * 
-             * 
+             *
+             *
              */
             @XmlAccessorType(XmlAccessType.FIELD)
             @XmlType(name = "", propOrder = {
@@ -869,11 +870,11 @@ public class Document {
 
                 /**
                  * Obtient la valeur de la propri�t� id.
-                 * 
+                 *
                  * @return
                  *     possible object is
                  *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Acct.Id }
-                 *     
+                 *
                  */
                 public Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Acct.Id getId() {
                     return id;
@@ -881,11 +882,11 @@ public class Document {
 
                 /**
                  * D�finit la valeur de la propri�t� id.
-                 * 
+                 *
                  * @param value
                  *     allowed object is
                  *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Acct.Id }
-                 *     
+                 *
                  */
                 public void setId(Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Acct.Id value) {
                     this.id = value;
@@ -893,11 +894,11 @@ public class Document {
 
                 /**
                  * Obtient la valeur de la propri�t� ccy.
-                 * 
+                 *
                  * @return
                  *     possible object is
                  *     {@link String }
-                 *     
+                 *
                  */
                 public String getCcy() {
                     return ccy;
@@ -905,11 +906,11 @@ public class Document {
 
                 /**
                  * D�finit la valeur de la propri�t� ccy.
-                 * 
+                 *
                  * @param value
                  *     allowed object is
                  *     {@link String }
-                 *     
+                 *
                  */
                 public void setCcy(String value) {
                     this.ccy = value;
@@ -917,11 +918,11 @@ public class Document {
 
                 /**
                  * Obtient la valeur de la propri�t� nm.
-                 * 
+                 *
                  * @return
                  *     possible object is
                  *     {@link String }
-                 *     
+                 *
                  */
                 public String getNm() {
                     return nm;
@@ -929,11 +930,11 @@ public class Document {
 
                 /**
                  * D�finit la valeur de la propri�t� nm.
-                 * 
+                 *
                  * @param value
                  *     allowed object is
                  *     {@link String }
-                 *     
+                 *
                  */
                 public void setNm(String value) {
                     this.nm = value;
@@ -941,11 +942,11 @@ public class Document {
 
                 /**
                  * Obtient la valeur de la propri�t� svcr.
-                 * 
+                 *
                  * @return
                  *     possible object is
                  *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Acct.Svcr }
-                 *     
+                 *
                  */
                 public Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Acct.Svcr getSvcr() {
                     return svcr;
@@ -953,11 +954,11 @@ public class Document {
 
                 /**
                  * D�finit la valeur de la propri�t� svcr.
-                 * 
+                 *
                  * @param value
                  *     allowed object is
                  *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Acct.Svcr }
-                 *     
+                 *
                  */
                 public void setSvcr(Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Acct.Svcr value) {
                     this.svcr = value;
@@ -966,9 +967,9 @@ public class Document {
 
                 /**
                  * <p>Classe Java pour anonymous complex type.
-                 * 
+                 *
                  * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
-                 * 
+                 *
                  * <pre>
                  * &lt;complexType>
                  *   &lt;complexContent>
@@ -980,8 +981,8 @@ public class Document {
                  *   &lt;/complexContent>
                  * &lt;/complexType>
                  * </pre>
-                 * 
-                 * 
+                 *
+                 *
                  */
                 @XmlAccessorType(XmlAccessType.FIELD)
                 @XmlType(name = "", propOrder = {
@@ -994,11 +995,11 @@ public class Document {
 
                     /**
                      * Obtient la valeur de la propri�t� iban.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link String }
-                     *     
+                     *
                      */
                     public String getIBAN() {
                         return iban;
@@ -1006,11 +1007,11 @@ public class Document {
 
                     /**
                      * D�finit la valeur de la propri�t� iban.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link String }
-                     *     
+                     *
                      */
                     public void setIBAN(String value) {
                         this.iban = value;
@@ -1021,9 +1022,9 @@ public class Document {
 
                 /**
                  * <p>Classe Java pour anonymous complex type.
-                 * 
+                 *
                  * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
-                 * 
+                 *
                  * <pre>
                  * &lt;complexType>
                  *   &lt;complexContent>
@@ -1045,8 +1046,8 @@ public class Document {
                  *   &lt;/complexContent>
                  * &lt;/complexType>
                  * </pre>
-                 * 
-                 * 
+                 *
+                 *
                  */
                 @XmlAccessorType(XmlAccessType.FIELD)
                 @XmlType(name = "", propOrder = {
@@ -1059,11 +1060,11 @@ public class Document {
 
                     /**
                      * Obtient la valeur de la propri�t� finInstnId.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Acct.Svcr.FinInstnId }
-                     *     
+                     *
                      */
                     public Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Acct.Svcr.FinInstnId getFinInstnId() {
                         return finInstnId;
@@ -1071,11 +1072,11 @@ public class Document {
 
                     /**
                      * D�finit la valeur de la propri�t� finInstnId.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Acct.Svcr.FinInstnId }
-                     *     
+                     *
                      */
                     public void setFinInstnId(Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Acct.Svcr.FinInstnId value) {
                         this.finInstnId = value;
@@ -1084,9 +1085,9 @@ public class Document {
 
                     /**
                      * <p>Classe Java pour anonymous complex type.
-                     * 
+                     *
                      * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
-                     * 
+                     *
                      * <pre>
                      * &lt;complexType>
                      *   &lt;complexContent>
@@ -1098,8 +1099,8 @@ public class Document {
                      *   &lt;/complexContent>
                      * &lt;/complexType>
                      * </pre>
-                     * 
-                     * 
+                     *
+                     *
                      */
                     @XmlAccessorType(XmlAccessType.FIELD)
                     @XmlType(name = "", propOrder = {
@@ -1112,11 +1113,11 @@ public class Document {
 
                         /**
                          * Obtient la valeur de la propri�t� bic.
-                         * 
+                         *
                          * @return
                          *     possible object is
                          *     {@link String }
-                         *     
+                         *
                          */
                         public String getBIC() {
                             return bic;
@@ -1124,11 +1125,11 @@ public class Document {
 
                         /**
                          * D�finit la valeur de la propri�t� bic.
-                         * 
+                         *
                          * @param value
                          *     allowed object is
                          *     {@link String }
-                         *     
+                         *
                          */
                         public void setBIC(String value) {
                             this.bic = value;
@@ -1143,9 +1144,9 @@ public class Document {
 
             /**
              * <p>Classe Java pour anonymous complex type.
-             * 
+             *
              * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
-             * 
+             *
              * <pre>
              * &lt;complexType>
              *   &lt;complexContent>
@@ -1274,8 +1275,8 @@ public class Document {
              *   &lt;/complexContent>
              * &lt;/complexType>
              * </pre>
-             * 
-             * 
+             *
+             *
              */
             @XmlAccessorType(XmlAccessType.FIELD)
             @XmlType(name = "", propOrder = {
@@ -1303,11 +1304,11 @@ public class Document {
 
                 /**
                  * Obtient la valeur de la propri�t� amt.
-                 * 
+                 *
                  * @return
                  *     possible object is
                  *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.Amt }
-                 *     
+                 *
                  */
                 public Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.Amt getAmt() {
                     return amt;
@@ -1315,11 +1316,11 @@ public class Document {
 
                 /**
                  * D�finit la valeur de la propri�t� amt.
-                 * 
+                 *
                  * @param value
                  *     allowed object is
                  *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.Amt }
-                 *     
+                 *
                  */
                 public void setAmt(Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.Amt value) {
                     this.amt = value;
@@ -1327,11 +1328,11 @@ public class Document {
 
                 /**
                  * Obtient la valeur de la propri�t� cdtDbtInd.
-                 * 
+                 *
                  * @return
                  *     possible object is
                  *     {@link String }
-                 *     
+                 *
                  */
                 public String getCdtDbtInd() {
                     return cdtDbtInd;
@@ -1339,11 +1340,11 @@ public class Document {
 
                 /**
                  * D�finit la valeur de la propri�t� cdtDbtInd.
-                 * 
+                 *
                  * @param value
                  *     allowed object is
                  *     {@link String }
-                 *     
+                 *
                  */
                 public void setCdtDbtInd(String value) {
                     this.cdtDbtInd = value;
@@ -1351,11 +1352,11 @@ public class Document {
 
                 /**
                  * Obtient la valeur de la propri�t� sts.
-                 * 
+                 *
                  * @return
                  *     possible object is
                  *     {@link String }
-                 *     
+                 *
                  */
                 public String getSts() {
                     return sts;
@@ -1363,11 +1364,11 @@ public class Document {
 
                 /**
                  * D�finit la valeur de la propri�t� sts.
-                 * 
+                 *
                  * @param value
                  *     allowed object is
                  *     {@link String }
-                 *     
+                 *
                  */
                 public void setSts(String value) {
                     this.sts = value;
@@ -1375,11 +1376,11 @@ public class Document {
 
                 /**
                  * Obtient la valeur de la propri�t� bookgDt.
-                 * 
+                 *
                  * @return
                  *     possible object is
                  *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.BookgDt }
-                 *     
+                 *
                  */
                 public Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.BookgDt getBookgDt() {
                     return bookgDt;
@@ -1387,11 +1388,11 @@ public class Document {
 
                 /**
                  * D�finit la valeur de la propri�t� bookgDt.
-                 * 
+                 *
                  * @param value
                  *     allowed object is
                  *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.BookgDt }
-                 *     
+                 *
                  */
                 public void setBookgDt(Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.BookgDt value) {
                     this.bookgDt = value;
@@ -1399,11 +1400,11 @@ public class Document {
 
                 /**
                  * Obtient la valeur de la propri�t� bkTxCd.
-                 * 
+                 *
                  * @return
                  *     possible object is
                  *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.BkTxCd }
-                 *     
+                 *
                  */
                 public Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.BkTxCd getBkTxCd() {
                     return bkTxCd;
@@ -1411,11 +1412,11 @@ public class Document {
 
                 /**
                  * D�finit la valeur de la propri�t� bkTxCd.
-                 * 
+                 *
                  * @param value
                  *     allowed object is
                  *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.BkTxCd }
-                 *     
+                 *
                  */
                 public void setBkTxCd(Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.BkTxCd value) {
                     this.bkTxCd = value;
@@ -1423,11 +1424,11 @@ public class Document {
 
                 /**
                  * Obtient la valeur de la propri�t� ntryDtls.
-                 * 
+                 *
                  * @return
                  *     possible object is
                  *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.NtryDtls }
-                 *     
+                 *
                  */
                 public Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.NtryDtls getNtryDtls() {
                     return ntryDtls;
@@ -1435,11 +1436,11 @@ public class Document {
 
                 /**
                  * D�finit la valeur de la propri�t� ntryDtls.
-                 * 
+                 *
                  * @param value
                  *     allowed object is
                  *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.NtryDtls }
-                 *     
+                 *
                  */
                 public void setNtryDtls(Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.NtryDtls value) {
                     this.ntryDtls = value;
@@ -1448,9 +1449,9 @@ public class Document {
 
                 /**
                  * <p>Classe Java pour anonymous complex type.
-                 * 
+                 *
                  * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
-                 * 
+                 *
                  * <pre>
                  * &lt;complexType>
                  *   &lt;simpleContent>
@@ -1460,8 +1461,8 @@ public class Document {
                  *   &lt;/simpleContent>
                  * &lt;/complexType>
                  * </pre>
-                 * 
-                 * 
+                 *
+                 *
                  */
                 @XmlAccessorType(XmlAccessType.FIELD)
                 @XmlType(name = "", propOrder = {
@@ -1476,11 +1477,11 @@ public class Document {
 
                     /**
                      * Obtient la valeur de la propri�t� value.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link BigDecimal }
-                     *     
+                     *
                      */
                     public BigDecimal getValue() {
                         return value;
@@ -1488,11 +1489,11 @@ public class Document {
 
                     /**
                      * D�finit la valeur de la propri�t� value.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link BigDecimal }
-                     *     
+                     *
                      */
                     public void setValue(BigDecimal value) {
                         this.value = value;
@@ -1500,11 +1501,11 @@ public class Document {
 
                     /**
                      * Obtient la valeur de la propri�t� ccy.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link String }
-                     *     
+                     *
                      */
                     public String getCcy() {
                         return ccy;
@@ -1512,11 +1513,11 @@ public class Document {
 
                     /**
                      * D�finit la valeur de la propri�t� ccy.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link String }
-                     *     
+                     *
                      */
                     public void setCcy(String value) {
                         this.ccy = value;
@@ -1527,9 +1528,9 @@ public class Document {
 
                 /**
                  * <p>Classe Java pour anonymous complex type.
-                 * 
+                 *
                  * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
-                 * 
+                 *
                  * <pre>
                  * &lt;complexType>
                  *   &lt;complexContent>
@@ -1574,8 +1575,8 @@ public class Document {
                  *   &lt;/complexContent>
                  * &lt;/complexType>
                  * </pre>
-                 * 
-                 * 
+                 *
+                 *
                  */
                 @XmlAccessorType(XmlAccessType.FIELD)
                 @XmlType(name = "", propOrder = {
@@ -1591,11 +1592,11 @@ public class Document {
 
                     /**
                      * Obtient la valeur de la propri�t� domn.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.BkTxCd.Domn }
-                     *     
+                     *
                      */
                     public Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.BkTxCd.Domn getDomn() {
                         return domn;
@@ -1603,11 +1604,11 @@ public class Document {
 
                     /**
                      * D�finit la valeur de la propri�t� domn.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.BkTxCd.Domn }
-                     *     
+                     *
                      */
                     public void setDomn(Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.BkTxCd.Domn value) {
                         this.domn = value;
@@ -1615,11 +1616,11 @@ public class Document {
 
                     /**
                      * Obtient la valeur de la propri�t� prtry.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.BkTxCd.Prtry }
-                     *     
+                     *
                      */
                     public Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.BkTxCd.Prtry getPrtry() {
                         return prtry;
@@ -1627,11 +1628,11 @@ public class Document {
 
                     /**
                      * D�finit la valeur de la propri�t� prtry.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.BkTxCd.Prtry }
-                     *     
+                     *
                      */
                     public void setPrtry(Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.BkTxCd.Prtry value) {
                         this.prtry = value;
@@ -1640,9 +1641,9 @@ public class Document {
 
                     /**
                      * <p>Classe Java pour anonymous complex type.
-                     * 
+                     *
                      * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
-                     * 
+                     *
                      * <pre>
                      * &lt;complexType>
                      *   &lt;complexContent>
@@ -1666,8 +1667,8 @@ public class Document {
                      *   &lt;/complexContent>
                      * &lt;/complexType>
                      * </pre>
-                     * 
-                     * 
+                     *
+                     *
                      */
                     @XmlAccessorType(XmlAccessType.FIELD)
                     @XmlType(name = "", propOrder = {
@@ -1683,11 +1684,11 @@ public class Document {
 
                         /**
                          * Obtient la valeur de la propri�t� cd.
-                         * 
+                         *
                          * @return
                          *     possible object is
                          *     {@link String }
-                         *     
+                         *
                          */
                         public String getCd() {
                             return cd;
@@ -1695,11 +1696,11 @@ public class Document {
 
                         /**
                          * D�finit la valeur de la propri�t� cd.
-                         * 
+                         *
                          * @param value
                          *     allowed object is
                          *     {@link String }
-                         *     
+                         *
                          */
                         public void setCd(String value) {
                             this.cd = value;
@@ -1707,11 +1708,11 @@ public class Document {
 
                         /**
                          * Obtient la valeur de la propri�t� fmly.
-                         * 
+                         *
                          * @return
                          *     possible object is
                          *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.BkTxCd.Domn.Fmly }
-                         *     
+                         *
                          */
                         public Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.BkTxCd.Domn.Fmly getFmly() {
                             return fmly;
@@ -1719,11 +1720,11 @@ public class Document {
 
                         /**
                          * D�finit la valeur de la propri�t� fmly.
-                         * 
+                         *
                          * @param value
                          *     allowed object is
                          *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.BkTxCd.Domn.Fmly }
-                         *     
+                         *
                          */
                         public void setFmly(Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.BkTxCd.Domn.Fmly value) {
                             this.fmly = value;
@@ -1732,9 +1733,9 @@ public class Document {
 
                         /**
                          * <p>Classe Java pour anonymous complex type.
-                         * 
+                         *
                          * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
-                         * 
+                         *
                          * <pre>
                          * &lt;complexType>
                          *   &lt;complexContent>
@@ -1747,8 +1748,8 @@ public class Document {
                          *   &lt;/complexContent>
                          * &lt;/complexType>
                          * </pre>
-                         * 
-                         * 
+                         *
+                         *
                          */
                         @XmlAccessorType(XmlAccessType.FIELD)
                         @XmlType(name = "", propOrder = {
@@ -1764,11 +1765,11 @@ public class Document {
 
                             /**
                              * Obtient la valeur de la propri�t� cd.
-                             * 
+                             *
                              * @return
                              *     possible object is
                              *     {@link String }
-                             *     
+                             *
                              */
                             public String getCd() {
                                 return cd;
@@ -1776,11 +1777,11 @@ public class Document {
 
                             /**
                              * D�finit la valeur de la propri�t� cd.
-                             * 
+                             *
                              * @param value
                              *     allowed object is
                              *     {@link String }
-                             *     
+                             *
                              */
                             public void setCd(String value) {
                                 this.cd = value;
@@ -1788,11 +1789,11 @@ public class Document {
 
                             /**
                              * Obtient la valeur de la propri�t� subFmlyCd.
-                             * 
+                             *
                              * @return
                              *     possible object is
                              *     {@link String }
-                             *     
+                             *
                              */
                             public String getSubFmlyCd() {
                                 return subFmlyCd;
@@ -1800,11 +1801,11 @@ public class Document {
 
                             /**
                              * D�finit la valeur de la propri�t� subFmlyCd.
-                             * 
+                             *
                              * @param value
                              *     allowed object is
                              *     {@link String }
-                             *     
+                             *
                              */
                             public void setSubFmlyCd(String value) {
                                 this.subFmlyCd = value;
@@ -1817,9 +1818,9 @@ public class Document {
 
                     /**
                      * <p>Classe Java pour anonymous complex type.
-                     * 
+                     *
                      * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
-                     * 
+                     *
                      * <pre>
                      * &lt;complexType>
                      *   &lt;complexContent>
@@ -1831,8 +1832,8 @@ public class Document {
                      *   &lt;/complexContent>
                      * &lt;/complexType>
                      * </pre>
-                     * 
-                     * 
+                     *
+                     *
                      */
                     @XmlAccessorType(XmlAccessType.FIELD)
                     @XmlType(name = "", propOrder = {
@@ -1845,11 +1846,11 @@ public class Document {
 
                         /**
                          * Obtient la valeur de la propri�t� cd.
-                         * 
+                         *
                          * @return
                          *     possible object is
                          *     {@link String }
-                         *     
+                         *
                          */
                         public String getCd() {
                             return cd;
@@ -1857,11 +1858,11 @@ public class Document {
 
                         /**
                          * D�finit la valeur de la propri�t� cd.
-                         * 
+                         *
                          * @param value
                          *     allowed object is
                          *     {@link String }
-                         *     
+                         *
                          */
                         public void setCd(String value) {
                             this.cd = value;
@@ -1874,9 +1875,9 @@ public class Document {
 
                 /**
                  * <p>Classe Java pour anonymous complex type.
-                 * 
+                 *
                  * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
-                 * 
+                 *
                  * <pre>
                  * &lt;complexType>
                  *   &lt;complexContent>
@@ -1888,8 +1889,8 @@ public class Document {
                  *   &lt;/complexContent>
                  * &lt;/complexType>
                  * </pre>
-                 * 
-                 * 
+                 *
+                 *
                  */
                 @XmlAccessorType(XmlAccessType.FIELD)
                 @XmlType(name = "", propOrder = {
@@ -1903,11 +1904,11 @@ public class Document {
 
                     /**
                      * Obtient la valeur de la propri�t� dt.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link XMLGregorianCalendar }
-                     *     
+                     *
                      */
                     public XMLGregorianCalendar getDt() {
                         return dt;
@@ -1915,11 +1916,11 @@ public class Document {
 
                     /**
                      * D�finit la valeur de la propri�t� dt.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link XMLGregorianCalendar }
-                     *     
+                     *
                      */
                     public void setDt(XMLGregorianCalendar value) {
                         this.dt = value;
@@ -1930,9 +1931,9 @@ public class Document {
 
                 /**
                  * <p>Classe Java pour anonymous complex type.
-                 * 
+                 *
                  * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
-                 * 
+                 *
                  * <pre>
                  * &lt;complexType>
                  *   &lt;complexContent>
@@ -1985,8 +1986,8 @@ public class Document {
                  *   &lt;/complexContent>
                  * &lt;/complexType>
                  * </pre>
-                 * 
-                 * 
+                 *
+                 *
                  */
                 @XmlAccessorType(XmlAccessType.FIELD)
                 @XmlType(name = "", propOrder = {
@@ -1999,11 +2000,11 @@ public class Document {
 
                     /**
                      * Obtient la valeur de la propri�t� txDtls.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.NtryDtls.TxDtls }
-                     *     
+                     *
                      */
                     public Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.NtryDtls.TxDtls getTxDtls() {
                         return txDtls;
@@ -2011,11 +2012,11 @@ public class Document {
 
                     /**
                      * D�finit la valeur de la propri�t� txDtls.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.NtryDtls.TxDtls }
-                     *     
+                     *
                      */
                     public void setTxDtls(Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.NtryDtls.TxDtls value) {
                         this.txDtls = value;
@@ -2024,9 +2025,9 @@ public class Document {
 
                     /**
                      * <p>Classe Java pour anonymous complex type.
-                     * 
+                     *
                      * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
-                     * 
+                     *
                      * <pre>
                      * &lt;complexType>
                      *   &lt;complexContent>
@@ -2069,8 +2070,8 @@ public class Document {
                      *   &lt;/complexContent>
                      * &lt;/complexType>
                      * </pre>
-                     * 
-                     * 
+                     *
+                     *
                      */
                     @XmlAccessorType(XmlAccessType.FIELD)
                     @XmlType(name = "", propOrder = {
@@ -2086,11 +2087,11 @@ public class Document {
 
                         /**
                          * Obtient la valeur de la propri�t� refs.
-                         * 
+                         *
                          * @return
                          *     possible object is
                          *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.NtryDtls.TxDtls.Refs }
-                         *     
+                         *
                          */
                         public Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.NtryDtls.TxDtls.Refs getRefs() {
                             return refs;
@@ -2098,11 +2099,11 @@ public class Document {
 
                         /**
                          * D�finit la valeur de la propri�t� refs.
-                         * 
+                         *
                          * @param value
                          *     allowed object is
                          *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.NtryDtls.TxDtls.Refs }
-                         *     
+                         *
                          */
                         public void setRefs(Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.NtryDtls.TxDtls.Refs value) {
                             this.refs = value;
@@ -2110,11 +2111,11 @@ public class Document {
 
                         /**
                          * Obtient la valeur de la propri�t� rltdPties.
-                         * 
+                         *
                          * @return
                          *     possible object is
                          *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.NtryDtls.TxDtls.RltdPties }
-                         *     
+                         *
                          */
                         public Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.NtryDtls.TxDtls.RltdPties getRltdPties() {
                             return rltdPties;
@@ -2122,11 +2123,11 @@ public class Document {
 
                         /**
                          * D�finit la valeur de la propri�t� rltdPties.
-                         * 
+                         *
                          * @param value
                          *     allowed object is
                          *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.NtryDtls.TxDtls.RltdPties }
-                         *     
+                         *
                          */
                         public void setRltdPties(Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.NtryDtls.TxDtls.RltdPties value) {
                             this.rltdPties = value;
@@ -2135,9 +2136,9 @@ public class Document {
 
                         /**
                          * <p>Classe Java pour anonymous complex type.
-                         * 
+                         *
                          * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
-                         * 
+                         *
                          * <pre>
                          * &lt;complexType>
                          *   &lt;complexContent>
@@ -2149,8 +2150,8 @@ public class Document {
                          *   &lt;/complexContent>
                          * &lt;/complexType>
                          * </pre>
-                         * 
-                         * 
+                         *
+                         *
                          */
                         @XmlAccessorType(XmlAccessType.FIELD)
                         @XmlType(name = "", propOrder = {
@@ -2163,11 +2164,11 @@ public class Document {
 
                             /**
                              * Obtient la valeur de la propri�t� endToEndId.
-                             * 
+                             *
                              * @return
                              *     possible object is
                              *     {@link String }
-                             *     
+                             *
                              */
                             public String getEndToEndId() {
                                 return endToEndId;
@@ -2175,11 +2176,11 @@ public class Document {
 
                             /**
                              * D�finit la valeur de la propri�t� endToEndId.
-                             * 
+                             *
                              * @param value
                              *     allowed object is
                              *     {@link String }
-                             *     
+                             *
                              */
                             public void setEndToEndId(String value) {
                                 this.endToEndId = value;
@@ -2190,9 +2191,9 @@ public class Document {
 
                         /**
                          * <p>Classe Java pour anonymous complex type.
-                         * 
+                         *
                          * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
-                         * 
+                         *
                          * <pre>
                          * &lt;complexType>
                          *   &lt;complexContent>
@@ -2214,8 +2215,8 @@ public class Document {
                          *   &lt;/complexContent>
                          * &lt;/complexType>
                          * </pre>
-                         * 
-                         * 
+                         *
+                         *
                          */
                         @XmlAccessorType(XmlAccessType.FIELD)
                         @XmlType(name = "", propOrder = {
@@ -2228,11 +2229,11 @@ public class Document {
 
                             /**
                              * Obtient la valeur de la propri�t� dbtr.
-                             * 
+                             *
                              * @return
                              *     possible object is
                              *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.NtryDtls.TxDtls.RltdPties.Dbtr }
-                             *     
+                             *
                              */
                             public Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.NtryDtls.TxDtls.RltdPties.Dbtr getDbtr() {
                                 return dbtr;
@@ -2240,11 +2241,11 @@ public class Document {
 
                             /**
                              * D�finit la valeur de la propri�t� dbtr.
-                             * 
+                             *
                              * @param value
                              *     allowed object is
                              *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.NtryDtls.TxDtls.RltdPties.Dbtr }
-                             *     
+                             *
                              */
                             public void setDbtr(Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.NtryDtls.TxDtls.RltdPties.Dbtr value) {
                                 this.dbtr = value;
@@ -2253,9 +2254,9 @@ public class Document {
 
                             /**
                              * <p>Classe Java pour anonymous complex type.
-                             * 
+                             *
                              * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
-                             * 
+                             *
                              * <pre>
                              * &lt;complexType>
                              *   &lt;complexContent>
@@ -2267,8 +2268,8 @@ public class Document {
                              *   &lt;/complexContent>
                              * &lt;/complexType>
                              * </pre>
-                             * 
-                             * 
+                             *
+                             *
                              */
                             @XmlAccessorType(XmlAccessType.FIELD)
                             @XmlType(name = "", propOrder = {
@@ -2281,11 +2282,11 @@ public class Document {
 
                                 /**
                                  * Obtient la valeur de la propri�t� nm.
-                                 * 
+                                 *
                                  * @return
                                  *     possible object is
                                  *     {@link String }
-                                 *     
+                                 *
                                  */
                                 public String getNm() {
                                     return nm;
@@ -2293,11 +2294,11 @@ public class Document {
 
                                 /**
                                  * D�finit la valeur de la propri�t� nm.
-                                 * 
+                                 *
                                  * @param value
                                  *     allowed object is
                                  *     {@link String }
-                                 *     
+                                 *
                                  */
                                 public void setNm(String value) {
                                     this.nm = value;
@@ -2316,9 +2317,9 @@ public class Document {
 
             /**
              * <p>Classe Java pour anonymous complex type.
-             * 
+             *
              * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
-             * 
+             *
              * <pre>
              * &lt;complexType>
              *   &lt;complexContent>
@@ -2353,8 +2354,8 @@ public class Document {
              *   &lt;/complexContent>
              * &lt;/complexType>
              * </pre>
-             * 
-             * 
+             *
+             *
              */
             @XmlAccessorType(XmlAccessType.FIELD)
             @XmlType(name = "", propOrder = {
@@ -2370,11 +2371,11 @@ public class Document {
 
                 /**
                  * Obtient la valeur de la propri�t� ttlCdtNtries.
-                 * 
+                 *
                  * @return
                  *     possible object is
                  *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.TxsSummry.TtlCdtNtries }
-                 *     
+                 *
                  */
                 public Document.BkToCstmrDbtCdtNtfctn.Ntfctn.TxsSummry.TtlCdtNtries getTtlCdtNtries() {
                     return ttlCdtNtries;
@@ -2382,11 +2383,11 @@ public class Document {
 
                 /**
                  * D�finit la valeur de la propri�t� ttlCdtNtries.
-                 * 
+                 *
                  * @param value
                  *     allowed object is
                  *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.TxsSummry.TtlCdtNtries }
-                 *     
+                 *
                  */
                 public void setTtlCdtNtries(Document.BkToCstmrDbtCdtNtfctn.Ntfctn.TxsSummry.TtlCdtNtries value) {
                     this.ttlCdtNtries = value;
@@ -2394,11 +2395,11 @@ public class Document {
 
                 /**
                  * Obtient la valeur de la propri�t� ttlDbtNtries.
-                 * 
+                 *
                  * @return
                  *     possible object is
                  *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.TxsSummry.TtlDbtNtries }
-                 *     
+                 *
                  */
                 public Document.BkToCstmrDbtCdtNtfctn.Ntfctn.TxsSummry.TtlDbtNtries getTtlDbtNtries() {
                     return ttlDbtNtries;
@@ -2406,11 +2407,11 @@ public class Document {
 
                 /**
                  * D�finit la valeur de la propri�t� ttlDbtNtries.
-                 * 
+                 *
                  * @param value
                  *     allowed object is
                  *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.TxsSummry.TtlDbtNtries }
-                 *     
+                 *
                  */
                 public void setTtlDbtNtries(Document.BkToCstmrDbtCdtNtfctn.Ntfctn.TxsSummry.TtlDbtNtries value) {
                     this.ttlDbtNtries = value;
@@ -2419,9 +2420,9 @@ public class Document {
 
                 /**
                  * <p>Classe Java pour anonymous complex type.
-                 * 
+                 *
                  * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
-                 * 
+                 *
                  * <pre>
                  * &lt;complexType>
                  *   &lt;complexContent>
@@ -2434,8 +2435,8 @@ public class Document {
                  *   &lt;/complexContent>
                  * &lt;/complexType>
                  * </pre>
-                 * 
-                 * 
+                 *
+                 *
                  */
                 @XmlAccessorType(XmlAccessType.FIELD)
                 @XmlType(name = "", propOrder = {
@@ -2453,7 +2454,7 @@ public class Document {
 
                     /**
                      * Obtient la valeur de la propri�t� nbOfNtries.
-                     * 
+                     *
                      */
                     public short getNbOfNtries() {
                         return nbOfNtries;
@@ -2461,7 +2462,7 @@ public class Document {
 
                     /**
                      * D�finit la valeur de la propri�t� nbOfNtries.
-                     * 
+                     *
                      */
                     public void setNbOfNtries(short value) {
                         this.nbOfNtries = value;
@@ -2469,7 +2470,7 @@ public class Document {
 
                     /**
                      * Obtient la valeur de la propri�t� sum.
-                     * 
+                     *
                      */
                     public short getSum() {
                         return sum;
@@ -2477,7 +2478,7 @@ public class Document {
 
                     /**
                      * D�finit la valeur de la propri�t� sum.
-                     * 
+                     *
                      */
                     public void setSum(short value) {
                         this.sum = value;
@@ -2488,9 +2489,9 @@ public class Document {
 
                 /**
                  * <p>Classe Java pour anonymous complex type.
-                 * 
+                 *
                  * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
-                 * 
+                 *
                  * <pre>
                  * &lt;complexType>
                  *   &lt;complexContent>
@@ -2503,8 +2504,8 @@ public class Document {
                  *   &lt;/complexContent>
                  * &lt;/complexType>
                  * </pre>
-                 * 
-                 * 
+                 *
+                 *
                  */
                 @XmlAccessorType(XmlAccessType.FIELD)
                 @XmlType(name = "", propOrder = {
@@ -2521,7 +2522,7 @@ public class Document {
 
                     /**
                      * Obtient la valeur de la propri�t� nbOfNtries.
-                     * 
+                     *
                      */
                     public short getNbOfNtries() {
                         return nbOfNtries;
@@ -2529,7 +2530,7 @@ public class Document {
 
                     /**
                      * D�finit la valeur de la propri�t� nbOfNtries.
-                     * 
+                     *
                      */
                     public void setNbOfNtries(short value) {
                         this.nbOfNtries = value;
@@ -2537,11 +2538,11 @@ public class Document {
 
                     /**
                      * Obtient la valeur de la propri�t� sum.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link BigDecimal }
-                     *     
+                     *
                      */
                     public BigDecimal getSum() {
                         return sum;
@@ -2549,11 +2550,11 @@ public class Document {
 
                     /**
                      * D�finit la valeur de la propri�t� sum.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link BigDecimal }
-                     *     
+                     *
                      */
                     public void setSum(BigDecimal value) {
                         this.sum = value;
