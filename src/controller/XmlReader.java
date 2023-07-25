@@ -53,12 +53,19 @@ public class XmlReader {
 			        System.out.println("Element 2: " + rootElement.getBkToCstmrDbtCdtNtfctn().getGrpHdr().getCreDtTm().getYear());
 			        System.out.println("NB NTRY: " + rootElement.getBkToCstmrDbtCdtNtfctn().getNtfctn().getNtry().size());
 			        int nbNtry = rootElement.getBkToCstmrDbtCdtNtfctn().getNtfctn().getNtry().size();
-			        List listNtry = rootElement.getBkToCstmrDbtCdtNtfctn().getNtfctn().getNtry();
+			        List<Ntry> listNtry = rootElement.getBkToCstmrDbtCdtNtfctn().getNtfctn().getNtry();
+			        int nbROV =0;
 			        for(int i=0;i<nbNtry;i++) {
-			        	Object n = listNtry.get(i);
-			        	System.out.println();
+			        	Ntry n = listNtry.get(i);
+			        	if(n.getBkTxCd().getDomn().getCd().equals("PMNT") && 
+			        			n.getBkTxCd().getDomn().getFmly().getCd().equals("RCDT") && 
+			        			n.getBkTxCd().getDomn().getFmly().getSubFmlyCd().equals("ESCT")) {
+			        		nbROV++;
+			        	}
+			       
+
 			        	
-			        }
+			        } System.out.println("NB R0V: " +nbROV);
 
 			        // You can add more processing or saving logic here for each file
 			    } catch (Exception  e) {
