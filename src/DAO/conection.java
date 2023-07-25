@@ -21,30 +21,9 @@ public class Conection {
             // Establish the database connection
             return DriverManager.getConnection(url, username, password);
 
-            // Create an SQL query to retrieve data
-            /* String sqlQuery = "SELECT * FROM GDEV.ZEUPAVI0 ";
-
-            // Execute the query and process the results
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(sqlQuery);
-
-            while (resultSet.next()) {
-                // Access and process data from the result set
-                int id = resultSet.getInt("id");
-                String name = resultSet.getString("name");
-                int age = resultSet.getInt("age");
-
-                // Perform desired operations with the retrieved data
-                System.out.println("ID: " + id + ", Name: " + name + ", Age: " + age);
-            }
-
-            // Close the resources
-            resultSet.close();
-            statement.close();
-            connection.close();*/
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-        }
+        } catch ( Exception e) {
+            e.printStackTrace();}
+        
         return null;
 	}
 

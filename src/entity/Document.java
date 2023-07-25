@@ -38,254 +38,7 @@ public class Document {
     }
 
 
-    /**
-     * <p>Classe Java pour anonymous complex type.
-     *
-     * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
-     *
-     * <pre>
-     * &lt;complexType>
-     *   &lt;complexContent>
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *       &lt;sequence>
-     *         &lt;element name="GrpHdr">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;sequence>
-     *                   &lt;element name="MsgId" type="{http://www.w3.org/2001/XMLSchema}unsignedShort"/>
-     *                   &lt;element name="CreDtTm" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
-     *                 &lt;/sequence>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *         &lt;element name="Ntfctn">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;sequence>
-     *                   &lt;element name="Id" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                   &lt;element name="CreDtTm" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
-     *                   &lt;element name="Acct">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence>
-     *                             &lt;element name="Id">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;sequence>
-     *                                       &lt;element name="IBAN" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                     &lt;/sequence>
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                             &lt;element name="Ccy" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="Nm" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="Svcr">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;sequence>
-     *                                       &lt;element name="FinInstnId">
-     *                                         &lt;complexType>
-     *                                           &lt;complexContent>
-     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                               &lt;sequence>
-     *                                                 &lt;element name="BIC" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                               &lt;/sequence>
-     *                                             &lt;/restriction>
-     *                                           &lt;/complexContent>
-     *                                         &lt;/complexType>
-     *                                       &lt;/element>
-     *                                     &lt;/sequence>
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="TxsSummry">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence>
-     *                             &lt;element name="TtlCdtNtries">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;sequence>
-     *                                       &lt;element name="NbOfNtries" type="{http://www.w3.org/2001/XMLSchema}unsignedByte"/>
-     *                                       &lt;element name="Sum" type="{http://www.w3.org/2001/XMLSchema}unsignedByte"/>
-     *                                     &lt;/sequence>
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                             &lt;element name="TtlDbtNtries">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;sequence>
-     *                                       &lt;element name="NbOfNtries" type="{http://www.w3.org/2001/XMLSchema}unsignedByte"/>
-     *                                       &lt;element name="Sum" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                                     &lt;/sequence>
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                   &lt;element name="Ntry" maxOccurs="unbounded">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence>
-     *                             &lt;element name="Amt">
-     *                               &lt;complexType>
-     *                                 &lt;simpleContent>
-     *                                   &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>decimal">
-     *                                     &lt;attribute name="Ccy" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *                                   &lt;/extension>
-     *                                 &lt;/simpleContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                             &lt;element name="CdtDbtInd" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="Sts" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="BookgDt">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;sequence>
-     *                                       &lt;element name="Dt" type="{http://www.w3.org/2001/XMLSchema}date"/>
-     *                                     &lt;/sequence>
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                             &lt;element name="BkTxCd">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;sequence>
-     *                                       &lt;element name="Domn">
-     *                                         &lt;complexType>
-     *                                           &lt;complexContent>
-     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                               &lt;sequence>
-     *                                                 &lt;element name="Cd" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                                 &lt;element name="Fmly">
-     *                                                   &lt;complexType>
-     *                                                     &lt;complexContent>
-     *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                                         &lt;sequence>
-     *                                                           &lt;element name="Cd" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                                           &lt;element name="SubFmlyCd" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                                         &lt;/sequence>
-     *                                                       &lt;/restriction>
-     *                                                     &lt;/complexContent>
-     *                                                   &lt;/complexType>
-     *                                                 &lt;/element>
-     *                                               &lt;/sequence>
-     *                                             &lt;/restriction>
-     *                                           &lt;/complexContent>
-     *                                         &lt;/complexType>
-     *                                       &lt;/element>
-     *                                       &lt;element name="Prtry">
-     *                                         &lt;complexType>
-     *                                           &lt;complexContent>
-     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                               &lt;sequence>
-     *                                                 &lt;element name="Cd" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                               &lt;/sequence>
-     *                                             &lt;/restriction>
-     *                                           &lt;/complexContent>
-     *                                         &lt;/complexType>
-     *                                       &lt;/element>
-     *                                     &lt;/sequence>
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                             &lt;element name="NtryDtls">
-     *                               &lt;complexType>
-     *                                 &lt;complexContent>
-     *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                     &lt;sequence>
-     *                                       &lt;element name="TxDtls">
-     *                                         &lt;complexType>
-     *                                           &lt;complexContent>
-     *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                               &lt;sequence>
-     *                                                 &lt;element name="Refs" minOccurs="0">
-     *                                                   &lt;complexType>
-     *                                                     &lt;complexContent>
-     *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                                         &lt;sequence>
-     *                                                           &lt;element name="EndToEndId" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                                         &lt;/sequence>
-     *                                                       &lt;/restriction>
-     *                                                     &lt;/complexContent>
-     *                                                   &lt;/complexType>
-     *                                                 &lt;/element>
-     *                                                 &lt;element name="RltdPties">
-     *                                                   &lt;complexType>
-     *                                                     &lt;complexContent>
-     *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                                         &lt;sequence>
-     *                                                           &lt;element name="Dbtr">
-     *                                                             &lt;complexType>
-     *                                                               &lt;complexContent>
-     *                                                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                                                                   &lt;sequence>
-     *                                                                     &lt;element name="Nm" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                                                                   &lt;/sequence>
-     *                                                                 &lt;/restriction>
-     *                                                               &lt;/complexContent>
-     *                                                             &lt;/complexType>
-     *                                                           &lt;/element>
-     *                                                         &lt;/sequence>
-     *                                                       &lt;/restriction>
-     *                                                     &lt;/complexContent>
-     *                                                   &lt;/complexType>
-     *                                                 &lt;/element>
-     *                                               &lt;/sequence>
-     *                                             &lt;/restriction>
-     *                                           &lt;/complexContent>
-     *                                         &lt;/complexType>
-     *                                       &lt;/element>
-     *                                     &lt;/sequence>
-     *                                   &lt;/restriction>
-     *                                 &lt;/complexContent>
-     *                               &lt;/complexType>
-     *                             &lt;/element>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                 &lt;/sequence>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
-     *       &lt;/sequence>
-     *     &lt;/restriction>
-     *   &lt;/complexContent>
-     * &lt;/complexType>
-     * </pre>
-     *
-     *
-     */
+  
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
         "grpHdr",
@@ -347,26 +100,7 @@ public class Document {
         }
 
 
-        /**
-         * <p>Classe Java pour anonymous complex type.
-         *
-         * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
-         *
-         * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;sequence>
-         *         &lt;element name="MsgId" type="{http://www.w3.org/2001/XMLSchema}unsignedShort"/>
-         *         &lt;element name="CreDtTm" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
-         *       &lt;/sequence>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
-         * </pre>
-         *
-         *
-         */
+
         @XmlAccessorType(XmlAccessType.FIELD)
         @XmlType(name = "", propOrder = {
             "msgId",
@@ -375,8 +109,8 @@ public class Document {
         public static class GrpHdr {
 
             @XmlElement(name = "MsgId")
-            @XmlSchemaType(name = "unsignedShort")
-            protected int msgId;
+            @XmlSchemaType(name = "string")
+            protected String msgId;
             @XmlElement(name = "CreDtTm", required = true)
             @XmlSchemaType(name = "dateTime")
             protected XMLGregorianCalendar creDtTm;
@@ -385,7 +119,7 @@ public class Document {
              * Obtient la valeur de la propri�t� msgId.
              *
              */
-            public int getMsgId() {
+            public String getMsgId() {
                 return msgId;
             }
 
@@ -393,7 +127,7 @@ public class Document {
              * D�finit la valeur de la propri�t� msgId.
              *
              */
-            public void setMsgId(int value) {
+            public void setMsgId(String value) {
                 this.msgId = value;
             }
 
@@ -424,232 +158,7 @@ public class Document {
         }
 
 
-        /**
-         * <p>Classe Java pour anonymous complex type.
-         *
-         * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
-         *
-         * <pre>
-         * &lt;complexType>
-         *   &lt;complexContent>
-         *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *       &lt;sequence>
-         *         &lt;element name="Id" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *         &lt;element name="CreDtTm" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
-         *         &lt;element name="Acct">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence>
-         *                   &lt;element name="Id">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;sequence>
-         *                             &lt;element name="IBAN" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                           &lt;/sequence>
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                   &lt;element name="Ccy" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="Nm" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="Svcr">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;sequence>
-         *                             &lt;element name="FinInstnId">
-         *                               &lt;complexType>
-         *                                 &lt;complexContent>
-         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                     &lt;sequence>
-         *                                       &lt;element name="BIC" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                                     &lt;/sequence>
-         *                                   &lt;/restriction>
-         *                                 &lt;/complexContent>
-         *                               &lt;/complexType>
-         *                             &lt;/element>
-         *                           &lt;/sequence>
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="TxsSummry">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence>
-         *                   &lt;element name="TtlCdtNtries">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;sequence>
-         *                             &lt;element name="NbOfNtries" type="{http://www.w3.org/2001/XMLSchema}unsignedByte"/>
-         *                             &lt;element name="Sum" type="{http://www.w3.org/2001/XMLSchema}unsignedByte"/>
-         *                           &lt;/sequence>
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                   &lt;element name="TtlDbtNtries">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;sequence>
-         *                             &lt;element name="NbOfNtries" type="{http://www.w3.org/2001/XMLSchema}unsignedByte"/>
-         *                             &lt;element name="Sum" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *                           &lt;/sequence>
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *         &lt;element name="Ntry" maxOccurs="unbounded">
-         *           &lt;complexType>
-         *             &lt;complexContent>
-         *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;sequence>
-         *                   &lt;element name="Amt">
-         *                     &lt;complexType>
-         *                       &lt;simpleContent>
-         *                         &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>decimal">
-         *                           &lt;attribute name="Ccy" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
-         *                         &lt;/extension>
-         *                       &lt;/simpleContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                   &lt;element name="CdtDbtInd" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="Sts" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                   &lt;element name="BookgDt">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;sequence>
-         *                             &lt;element name="Dt" type="{http://www.w3.org/2001/XMLSchema}date"/>
-         *                           &lt;/sequence>
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                   &lt;element name="BkTxCd">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;sequence>
-         *                             &lt;element name="Domn">
-         *                               &lt;complexType>
-         *                                 &lt;complexContent>
-         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                     &lt;sequence>
-         *                                       &lt;element name="Cd" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                                       &lt;element name="Fmly">
-         *                                         &lt;complexType>
-         *                                           &lt;complexContent>
-         *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                               &lt;sequence>
-         *                                                 &lt;element name="Cd" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                                                 &lt;element name="SubFmlyCd" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                                               &lt;/sequence>
-         *                                             &lt;/restriction>
-         *                                           &lt;/complexContent>
-         *                                         &lt;/complexType>
-         *                                       &lt;/element>
-         *                                     &lt;/sequence>
-         *                                   &lt;/restriction>
-         *                                 &lt;/complexContent>
-         *                               &lt;/complexType>
-         *                             &lt;/element>
-         *                             &lt;element name="Prtry">
-         *                               &lt;complexType>
-         *                                 &lt;complexContent>
-         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                     &lt;sequence>
-         *                                       &lt;element name="Cd" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                                     &lt;/sequence>
-         *                                   &lt;/restriction>
-         *                                 &lt;/complexContent>
-         *                               &lt;/complexType>
-         *                             &lt;/element>
-         *                           &lt;/sequence>
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                   &lt;element name="NtryDtls">
-         *                     &lt;complexType>
-         *                       &lt;complexContent>
-         *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                           &lt;sequence>
-         *                             &lt;element name="TxDtls">
-         *                               &lt;complexType>
-         *                                 &lt;complexContent>
-         *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                     &lt;sequence>
-         *                                       &lt;element name="Refs" minOccurs="0">
-         *                                         &lt;complexType>
-         *                                           &lt;complexContent>
-         *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                               &lt;sequence>
-         *                                                 &lt;element name="EndToEndId" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                                               &lt;/sequence>
-         *                                             &lt;/restriction>
-         *                                           &lt;/complexContent>
-         *                                         &lt;/complexType>
-         *                                       &lt;/element>
-         *                                       &lt;element name="RltdPties">
-         *                                         &lt;complexType>
-         *                                           &lt;complexContent>
-         *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                               &lt;sequence>
-         *                                                 &lt;element name="Dbtr">
-         *                                                   &lt;complexType>
-         *                                                     &lt;complexContent>
-         *                                                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                                                         &lt;sequence>
-         *                                                           &lt;element name="Nm" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *                                                         &lt;/sequence>
-         *                                                       &lt;/restriction>
-         *                                                     &lt;/complexContent>
-         *                                                   &lt;/complexType>
-         *                                                 &lt;/element>
-         *                                               &lt;/sequence>
-         *                                             &lt;/restriction>
-         *                                           &lt;/complexContent>
-         *                                         &lt;/complexType>
-         *                                       &lt;/element>
-         *                                     &lt;/sequence>
-         *                                   &lt;/restriction>
-         *                                 &lt;/complexContent>
-         *                               &lt;/complexType>
-         *                             &lt;/element>
-         *                           &lt;/sequence>
-         *                         &lt;/restriction>
-         *                       &lt;/complexContent>
-         *                     &lt;/complexType>
-         *                   &lt;/element>
-         *                 &lt;/sequence>
-         *               &lt;/restriction>
-         *             &lt;/complexContent>
-         *           &lt;/complexType>
-         *         &lt;/element>
-         *       &lt;/sequence>
-         *     &lt;/restriction>
-         *   &lt;/complexContent>
-         * &lt;/complexType>
-         * </pre>
-         *
-         *
-         */
+
         @XmlAccessorType(XmlAccessType.FIELD)
         @XmlType(name = "", propOrder = {
             "id",
@@ -672,185 +181,61 @@ public class Document {
             @XmlElement(name = "Ntry", required = true)
             protected List<Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry> ntry;
 
-            /**
-             * Obtient la valeur de la propri�t� id.
-             *
-             * @return
-             *     possible object is
-             *     {@link String }
-             *
-             */
+ 
             public String getId() {
                 return id;
             }
 
-            /**
-             * D�finit la valeur de la propri�t� id.
-             *
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *
-             */
+
             public void setId(String value) {
                 this.id = value;
             }
 
-            /**
-             * Obtient la valeur de la propri�t� creDtTm.
-             *
-             * @return
-             *     possible object is
-             *     {@link XMLGregorianCalendar }
-             *
-             */
+ 
             public XMLGregorianCalendar getCreDtTm() {
                 return creDtTm;
             }
 
-            /**
-             * D�finit la valeur de la propri�t� creDtTm.
-             *
-             * @param value
-             *     allowed object is
-             *     {@link XMLGregorianCalendar }
-             *
-             */
+
             public void setCreDtTm(XMLGregorianCalendar value) {
                 this.creDtTm = value;
             }
 
-            /**
-             * Obtient la valeur de la propri�t� acct.
-             *
-             * @return
-             *     possible object is
-             *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Acct }
-             *
-             */
+
             public Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Acct getAcct() {
                 return acct;
             }
 
-            /**
-             * D�finit la valeur de la propri�t� acct.
-             *
-             * @param value
-             *     allowed object is
-             *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Acct }
-             *
-             */
             public void setAcct(Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Acct value) {
                 this.acct = value;
             }
 
-            /**
-             * Obtient la valeur de la propri�t� txsSummry.
-             *
-             * @return
-             *     possible object is
-             *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.TxsSummry }
-             *
-             */
+
             public Document.BkToCstmrDbtCdtNtfctn.Ntfctn.TxsSummry getTxsSummry() {
                 return txsSummry;
             }
 
-            /**
-             * D�finit la valeur de la propri�t� txsSummry.
-             *
-             * @param value
-             *     allowed object is
-             *     {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.TxsSummry }
-             *
-             */
+
             public void setTxsSummry(Document.BkToCstmrDbtCdtNtfctn.Ntfctn.TxsSummry value) {
                 this.txsSummry = value;
             }
+            
+            
 
-            /**
-             * Gets the value of the ntry property.
-             *
-             * <p>
-             * This accessor method returns a reference to the live list,
-             * not a snapshot. Therefore any modification you make to the
-             * returned list will be present inside the JAXB object.
-             * This is why there is not a <CODE>set</CODE> method for the ntry property.
-             *
-             * <p>
-             * For example, to add a new item, do as follows:
-             * <pre>
-             *    getNtry().add(newItem);
-             * </pre>
-             *
-             *
-             * <p>
-             * Objects of the following type(s) are allowed in the list
-             * {@link Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry }
-             *
-             *
-             */
+
             public List<Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry> getNtry() {
-                if (ntry == null) {
-                    ntry = new ArrayList<>();
-                }
-                return this.ntry;
-            }
+				return ntry;
+			}
 
 
-            /**
-             * <p>Classe Java pour anonymous complex type.
-             *
-             * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
-             *
-             * <pre>
-             * &lt;complexType>
-             *   &lt;complexContent>
-             *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;sequence>
-             *         &lt;element name="Id">
-             *           &lt;complexType>
-             *             &lt;complexContent>
-             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                 &lt;sequence>
-             *                   &lt;element name="IBAN" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                 &lt;/sequence>
-             *               &lt;/restriction>
-             *             &lt;/complexContent>
-             *           &lt;/complexType>
-             *         &lt;/element>
-             *         &lt;element name="Ccy" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="Nm" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *         &lt;element name="Svcr">
-             *           &lt;complexType>
-             *             &lt;complexContent>
-             *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                 &lt;sequence>
-             *                   &lt;element name="FinInstnId">
-             *                     &lt;complexType>
-             *                       &lt;complexContent>
-             *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *                           &lt;sequence>
-             *                             &lt;element name="BIC" type="{http://www.w3.org/2001/XMLSchema}string"/>
-             *                           &lt;/sequence>
-             *                         &lt;/restriction>
-             *                       &lt;/complexContent>
-             *                     &lt;/complexType>
-             *                   &lt;/element>
-             *                 &lt;/sequence>
-             *               &lt;/restriction>
-             *             &lt;/complexContent>
-             *           &lt;/complexType>
-             *         &lt;/element>
-             *       &lt;/sequence>
-             *     &lt;/restriction>
-             *   &lt;/complexContent>
-             * &lt;/complexType>
-             * </pre>
-             *
-             *
-             */
-            @XmlAccessorType(XmlAccessType.FIELD)
+			public void setNtry(List<Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry> ntry) {
+				this.ntry = ntry;
+			}
+
+
+
+
+			@XmlAccessorType(XmlAccessType.FIELD)
             @XmlType(name = "", propOrder = {
                 "id",
                 "ccy",
