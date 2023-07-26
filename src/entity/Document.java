@@ -174,12 +174,12 @@ public class Document {
             @XmlElement(name = "CreDtTm", required = true)
             @XmlSchemaType(name = "dateTime")
             protected XMLGregorianCalendar creDtTm;
-            @XmlElement(name = "Acct", required = true)
-            protected Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Acct acct;
             @XmlElement(name = "TxsSummry", required = true)
             protected Document.BkToCstmrDbtCdtNtfctn.Ntfctn.TxsSummry txsSummry;
             @XmlElement(name = "Ntry", required = true)
             protected List<Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry> ntry;
+			@XmlElement(name = "Acct", required = true)
+			protected Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Acct acct;
 
  
             public String getId() {
@@ -199,15 +199,6 @@ public class Document {
 
             public void setCreDtTm(XMLGregorianCalendar value) {
                 this.creDtTm = value;
-            }
-
-
-            public Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Acct getAcct() {
-                return acct;
-            }
-
-            public void setAcct(Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Acct value) {
-                this.acct = value;
             }
 
 
@@ -670,10 +661,14 @@ public class Document {
                 "sts",
                 "bookgDt",
                 "bkTxCd",
-                "ntryDtls"
+                "ntryDtls",
+                "valDt"
             })
+
             public static class Ntry {
 
+                @XmlElement(name = "ValDt", required = true)
+                protected Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.ValDt valDt;
                 @XmlElement(name = "Amt", required = true)
                 protected Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.Amt amt;
                 @XmlElement(name = "CdtDbtInd", required = true)
@@ -698,8 +693,19 @@ public class Document {
                 public Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.Amt getAmt() {
                     return amt;
                 }
+                
 
-                /**
+                public Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.ValDt getValDt() {
+					return valDt;
+				}
+
+
+				public void setValDt(Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry.ValDt valDt) {
+					this.valDt = valDt;
+				}
+
+
+				/**
                  * D�finit la valeur de la propri�t� amt.
                  *
                  * @param value
@@ -849,6 +855,25 @@ public class Document {
                  *
                  *
                  */
+                @XmlAccessorType(XmlAccessType.FIELD)
+                @XmlType(name = "", propOrder = {
+                    "dt"
+                })
+                public static class ValDt{
+                	@XmlElement(name = "dt", required = true)
+                    @XmlSchemaType(name = "dateTime")
+                    protected XMLGregorianCalendar dt;
+
+    				public XMLGregorianCalendar getDt() {
+    					return dt;
+    				}
+
+    				public void setDt(XMLGregorianCalendar dt) {
+    					this.dt = dt;
+    				}
+                	
+                	
+                }
                 @XmlAccessorType(XmlAccessType.FIELD)
                 @XmlType(name = "", propOrder = {
                     "value"
@@ -1540,12 +1565,15 @@ public class Document {
                          */
                         @XmlAccessorType(XmlAccessType.FIELD)
                         @XmlType(name = "", propOrder = {
-                            "endToEndId"
+                            "endToEndId",
+                            "acctSvcrRef"
                         })
                         public static class Refs {
 
                             @XmlElement(name = "EndToEndId", required = true)
                             protected String endToEndId;
+                            @XmlElement(name = "AcctSvcrRef", required = true)
+                            protected String acctSvcrRef;
 
                             /**
                              * Obtient la valeur de la propri�t� endToEndId.
@@ -1558,8 +1586,16 @@ public class Document {
                             public String getEndToEndId() {
                                 return endToEndId;
                             }
+                            
+                            public String getAcctSvcrRef() {
+								return acctSvcrRef;
+							}
 
-                            /**
+							public void setAcctSvcrRef(String acctSvcrRef) {
+								this.acctSvcrRef = acctSvcrRef;
+							}
+
+							/**
                              * D�finit la valeur de la propri�t� endToEndId.
                              *
                              * @param value
@@ -1658,12 +1694,14 @@ public class Document {
                              */
                             @XmlAccessorType(XmlAccessType.FIELD)
                             @XmlType(name = "", propOrder = {
-                                "nm"
+                                "nm","IBAN"
                             })
                             public static class Dbtr {
 
                                 @XmlElement(name = "Nm", required = true)
                                 protected String nm;
+                                @XmlElement(name = "IBAN", required = true)
+                                protected String IBAN;
 
                                 /**
                                  * Obtient la valeur de la propri�t� nm.
@@ -1676,8 +1714,19 @@ public class Document {
                                 public String getNm() {
                                     return nm;
                                 }
+                                
 
-                                /**
+                                public String getIBAN() {
+									return IBAN;
+								}
+
+
+								public void setIBAN(String iBAN) {
+									IBAN = iBAN;
+								}
+
+
+								/**
                                  * D�finit la valeur de la propri�t� nm.
                                  *
                                  * @param value

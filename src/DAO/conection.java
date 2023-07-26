@@ -9,7 +9,7 @@ import java.sql.Statement;
 
 public class Conection {
 
-	public Connection  conecter() {
+	public static Connection  conecter() {
 		String url = "jdbc:oracle:thin:@10.7.106.181:1521:devat";
         String username = "gdev";
         String password = "gdev";
