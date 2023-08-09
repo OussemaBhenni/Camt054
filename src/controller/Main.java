@@ -21,7 +21,7 @@ import DAO.GetIban;
 import entity.Document;
 import entity.Document.BkToCstmrDbtCdtNtfctn.Ntfctn.Ntry;
 
-public class XmlReader {
+public class Main {
 	public static void main(String[] args) {
 		try {
 			// Set the system property to use the EclipseLink MOXy implementation
@@ -57,43 +57,45 @@ public class XmlReader {
 					// Now you have the data from the XML file in the rootElement object
 					// System.out.println("MSGID: " +
 					// document.getBkToCstmrDbtCdtNtfctn().getGrpHdr().getMsgId());
-					System.out.println("NB NTRY: " + document.getBkToCstmrDbtCdtNtfctn().getNtfctn().getNtry().size());
+					//System.out.println("NB NTRY: " + document.getBkToCstmrDbtCdtNtfctn().getNtfctn().getNtry().size());
 					List<Ntry> listNtry = document.getBkToCstmrDbtCdtNtfctn().getNtfctn().getNtry();
 
 					for (Ntry elem : listNtry) {
 						if (elem.getBkTxCd().getDomn().getCd().equals("PMNT")
 								&& elem.getBkTxCd().getDomn().getFmly().getCd().equals("RCDT")
 								&& elem.getBkTxCd().getDomn().getFmly().getSubFmlyCd().equals("ESCT")) {
+							//System.out.println("ROV");
+							
 
 							if (elem.getNtryDtls() != null && elem.getNtryDtls().getTxDtls() != null
-									&& elem.getNtryDtls().getTxDtls().getRefs() != null
-									&& elem.getNtryDtls().getTxDtls().getRefs().getAcctSvcrRef() != null) {
-								// System.out.println("TransactionID :
-								// "+elem.getNtryDtls().getTxDtls().getRefs().getAcctSvcrRef()+"
-								// ==>iban1:"+GetIban.getIbanWithTransactionID(elem.getNtryDtls().getTxDtls().getRefs().getAcctSvcrRef()));
-								if (GetIban.getIbanWithTransactionID(
-										elem.getNtryDtls().getTxDtls().getRefs().getAcctSvcrRef()) != null) {
+									&& elem.getNtryDtls().getTxDtls() != null
+											&& elem.getNtryDtls().getTxDtls().getRefs() != null
+									&& elem.getNtryDtls().getTxDtls().getRefs().getAcctSvcrRef() != null
+									&& GetIban.getIbanWithTransactionID(
+											elem.getNtryDtls().getTxDtls().getRefs().getAcctSvcrRef()) != null){
+								System.out.println("TransactionID :"+elem.getNtryDtls().getTxDtls().getRefs().getAcctSvcrRef()
+										+"==>iban1:"+GetIban.getIbanWithTransactionID(elem.getNtryDtls().getTxDtls().getRefs().getAcctSvcrRef()));
+								
 									elem.getNtryDtls().getTxDtls().getRltdPties().getDbtr()
 											.setIBAN(GetIban.getIbanWithTransactionID(
 													elem.getNtryDtls().getTxDtls().getRefs().getAcctSvcrRef()));
 									affected = true;
-								}
+								
 
 							}
 
 							else if (elem.getNtryDtls() != null && elem.getNtryDtls().getTxDtls() != null
 									&& elem.getNtryDtls().getTxDtls().getRefs() != null
-									&& elem.getNtryDtls().getTxDtls().getRefs().getEndToEndId() != null) {
-								// System.out.println("EndToEndID :
-								// "+elem.getNtryDtls().getTxDtls().getRefs().getEndToEndId()+"
-								// ==>iban2:"+GetIban.getIbanWithEndToEndID(elem.getNtryDtls().getTxDtls().getRefs().getEndToEndId()));
-								if (GetIban.getIbanWithEndToEndID(
-										elem.getNtryDtls().getTxDtls().getRefs().getEndToEndId()) != null) {
+									&& elem.getNtryDtls().getTxDtls().getRefs().getEndToEndId() != null
+									&& GetIban.getIbanWithEndToEndID(elem.getNtryDtls().getTxDtls().getRefs().getEndToEndId()) != null ) {
+								//System.out.println("EndToEndID :"+elem.getNtryDtls().getTxDtls().getRefs().getEndToEndId()
+								//		+"==>iban2:"+GetIban.getIbanWithEndToEndID(elem.getNtryDtls().getTxDtls().getRefs().getEndToEndId()));
+								
 									elem.getNtryDtls().getTxDtls().getRltdPties().getDbtr()
 											.setIBAN(GetIban.getIbanWithEndToEndID(
 													elem.getNtryDtls().getTxDtls().getRefs().getEndToEndId()));
 									affected = true;
-								}
+								
 
 							} else if (elem.getAmt() != null && elem.getAmt().getValue() != null
 									&& elem.getAmt().getCcy() != null && elem.getValDt() != null
@@ -101,26 +103,27 @@ public class XmlReader {
 									&& elem.getNtryDtls().getTxDtls() != null
 									&& elem.getNtryDtls().getTxDtls().getRltdPties() != null
 									&& elem.getNtryDtls().getTxDtls().getRltdPties().getDbtr() != null
-									&& elem.getNtryDtls().getTxDtls().getRltdPties().getDbtr().getNm() != null) {
+									&& elem.getNtryDtls().getTxDtls().getRltdPties().getDbtr().getNm() != null
+									&&		GetIban.getIbanWithMontantDeviseDate(elem.getAmt().getValue(),
+													elem.getAmt().getCcy(), elem.getValDt().getDt(),
+													elem.getNtryDtls().getTxDtls().getRltdPties().getDbtr().getNm()) != null ){
 
-								/*
-								 * System.out.println("\n mantant :"+elem.getAmt().getValue()+
-								 * "\n curency : "+elem.getAmt().getCcy()+"\n" +
-								 * "date :"+elem.getValDt().getDt() +
-								 * "Doneur : "+elem.getNtryDtls().getTxDtls().getRltdPties().getDbtr().getNm() +
-								 * " iban3:"+GetIban.getIbanWithMontantDeviseDate(elem.getAmt().getValue(),elem.
-								 * getAmt().getCcy() , elem.getValDt().getDt(),
-								 * elem.getNtryDtls().getTxDtls().getRltdPties().getDbtr().getNm()));
-								 */
-								if (GetIban.getIbanWithMontantDeviseDate(elem.getAmt().getValue(),
-										elem.getAmt().getCcy(), elem.getValDt().getDt(),
-										elem.getNtryDtls().getTxDtls().getRltdPties().getDbtr().getNm()) != null) {
+								
+								 System.out.println("\n mantant :"+elem.getAmt().getValue()+
+								 "\n curency : "+elem.getAmt().getCcy()+"\n" +
+								 "date :"+elem.getValDt().getDt() +
+								 "Doneur : "+elem.getNtryDtls().getTxDtls().getRltdPties().getDbtr().getNm() +
+								 " iban3:"+GetIban.getIbanWithMontantDeviseDate(elem.getAmt().getValue(),elem.
+								 getAmt().getCcy() , elem.getValDt().getDt(),
+								 elem.getNtryDtls().getTxDtls().getRltdPties().getDbtr().getNm()));
+								 
+							
 									elem.getNtryDtls().getTxDtls().getRltdPties().getDbtr()
 											.setIBAN(GetIban.getIbanWithMontantDeviseDate(elem.getAmt().getValue(),
 													elem.getAmt().getCcy(), elem.getValDt().getDt(),
 													elem.getNtryDtls().getTxDtls().getRltdPties().getDbtr().getNm()));
 									affected = true;
-								}
+								
 							}
 						}
 
@@ -162,5 +165,6 @@ public class XmlReader {
 		} catch (JAXBException e) {
 			e.printStackTrace();
 		}
+		System.out.println("Done");
 	}
 }

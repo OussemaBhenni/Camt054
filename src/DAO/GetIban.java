@@ -3,9 +3,11 @@ package DAO;
 import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.Date;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 
 import javax.xml.datatype.XMLGregorianCalendar;
 
@@ -16,6 +18,8 @@ public class GetIban {
 		try {
 			String sqlQuery = "SELECT EUPAVIPDT || EUPAVIIDS || EUPAVIBDT IBAN  FROM GDEV.ZEUPAVI0 WHERE EUPAVITXI ='"
 					+ TransactionID + "'";
+			System.out.println("solution 1");
+			System.out.println(sqlQuery);
 			// Execute the query and process the results
 			Statement statement = con.createStatement();
 			ResultSet resultSet = statement.executeQuery(sqlQuery);
@@ -37,8 +41,10 @@ public class GetIban {
 
 	public static String getIbanWithEndToEndID(String EndToEndID) {
 		try {
-			String sqlQuery = "SELECT EUPAVIPDT || EUPAVIIDS || EUPAVIBDT IBAN  FROM GDEV.ZEUPAVI0 WHERE EUPAVIEND ='"
+			String sqlQuery = "SELECT EUPAVIPDT || EUPAVIIDS || EUPAVIBDT IBAN  FROM GDEV.ZEUPAVI0 WHERE EUPAVICOP ='R0V' AND EUPAVIEND ='"
 					+ EndToEndID + "'";
+			//System.out.println("solution 2");
+			//System.out.println(sqlQuery);
 			// Execute the query and process the results
 			Statement statement = con.createStatement();
 			ResultSet resultSet = statement.executeQuery(sqlQuery);
@@ -59,28 +65,60 @@ public class GetIban {
 	}
 
 	public static String getIbanWithMontantDeviseDate(BigDecimal montant, String devise, XMLGregorianCalendar date,
-			String nomDuDonneurDordre) {
-		try {
-			String sqlQuery = "SELECT EUPAVIPDT || EUPAVIIDS || EUPAVIBDT IBAN  FROM GDEV.ZEUPAVI0 WHERE EUPAVIMON ='"
-					+ montant + "'" + " and EUPAVIDEV= '" + devise + "'" + " and EUPAVIDVA= '" + date + "'"
-					+ " and EUPAVINDO= '" + nomDuDonneurDordre + "'";
-			// Execute the query and process the results
-			Statement statement = con.createStatement();
-			ResultSet resultSet = statement.executeQuery(sqlQuery);
+	        String nomDuDonneurDordre) {
+	    try {
+	        String sqlQuery = "SELECT EUPAVIPDT || EUPAVIIDS || EUPAVIBDT IBAN FROM GDEV.ZEUPAVI0 WHERE EUPAVICOP ='R0V' AND EUPAVIMON = ?"
+	                + " and EUPAVIDEV = ? and EUPAVIDVA = ? and EUPAVINDO = ?";
+	        
+	        // Execute the query and process the results
+	        PreparedStatement statement = con.prepareStatement(sqlQuery);
+	        statement.setBigDecimal(1, montant);
+	        statement.setString(2, devise);
+	        
+	        // Convert the XMLGregorianCalendar to a long value representing the date in milliseconds since epoch
+	        String s,j ;
+	        if(date.getMonth()<=9) {
+	        	s="0"+date.getMonth();
+	        }else {
+	        	s =""+date.getMonth();
+	        }
+	        if(date.getDay()<=9) {
+	        	j="0"+date.getDay();
+	        }else {
+	        	j =""+date.getDay();
+	        }
+	        statement.setInt(3, new Integer("1"+date.getYear()%100+s+j));
+	        
+	        statement.setString(4, nomDuDonneurDordre);
 
-			while (resultSet.next()) {
-				return resultSet.getString("IBAN");
-			}
 
-			// Close the resources
-			resultSet.close();
-			statement.close();
+	        
+	        ResultSet resultSet = statement.executeQuery();
+	        //System.out.println("solution 3");
+	        
+	        	
+	        //System.out.println( new Integer("1"+date.getYear()%100+s+date.getDay()));
+	        if(new String(nomDuDonneurDordre).contains("'")== false) {
+	        	//System.out.println(new String("SELECT EUPAVIPDT || EUPAVIIDS || EUPAVIBDT IBAN FROM GDEV.ZEUPAVI0 WHERE EUPAVICOP ='R0V' AND EUPAVIMON = "+montant
+		        //		+ " and EUPAVIDEV = '"+devise+"' and EUPAVIDVA = "+"1"+date.getYear()%100+s+j+" and EUPAVINDO = '"+nomDuDonneurDordre+"';"));
+		        
+	        }
+	       
+	        while (resultSet.next()) {
+	        	System.out.println(resultSet.getString("IBAN"));
+	            return resultSet.getString("IBAN");
+	        }
 
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+	        // Close the resources
+	        resultSet.close();
+	        statement.close();
 
-		return null;
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
+
+	    return null;
 	}
+
 
 }
