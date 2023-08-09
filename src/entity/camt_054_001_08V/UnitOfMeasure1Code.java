@@ -1,0 +1,111 @@
+//
+// Ce fichier a �t� g�n�r� par l'impl�mentation de r�f�rence JavaTM Architecture for XML Binding (JAXB), v2.2.8-b130911.1802 
+// Voir <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
+// Toute modification apport�e � ce fichier sera perdue lors de la recompilation du sch�ma source. 
+// G�n�r� le : 2023.08.09 � 10:48:17 AM WAT 
+//
+
+
+package entity.camt_054_001_08V;
+
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Classe Java pour UnitOfMeasure1Code.
+ * 
+ * <p>Le fragment de sch�ma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>
+ * <pre>
+ * &lt;simpleType name="UnitOfMeasure1Code">
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     &lt;enumeration value="PIEC"/>
+ *     &lt;enumeration value="TONS"/>
+ *     &lt;enumeration value="FOOT"/>
+ *     &lt;enumeration value="GBGA"/>
+ *     &lt;enumeration value="USGA"/>
+ *     &lt;enumeration value="GRAM"/>
+ *     &lt;enumeration value="INCH"/>
+ *     &lt;enumeration value="KILO"/>
+ *     &lt;enumeration value="PUND"/>
+ *     &lt;enumeration value="METR"/>
+ *     &lt;enumeration value="CMET"/>
+ *     &lt;enumeration value="MMET"/>
+ *     &lt;enumeration value="LITR"/>
+ *     &lt;enumeration value="CELI"/>
+ *     &lt;enumeration value="MILI"/>
+ *     &lt;enumeration value="GBOU"/>
+ *     &lt;enumeration value="USOU"/>
+ *     &lt;enumeration value="GBQA"/>
+ *     &lt;enumeration value="USQA"/>
+ *     &lt;enumeration value="GBPI"/>
+ *     &lt;enumeration value="USPI"/>
+ *     &lt;enumeration value="MILE"/>
+ *     &lt;enumeration value="KMET"/>
+ *     &lt;enumeration value="YARD"/>
+ *     &lt;enumeration value="SQKI"/>
+ *     &lt;enumeration value="HECT"/>
+ *     &lt;enumeration value="ARES"/>
+ *     &lt;enumeration value="SMET"/>
+ *     &lt;enumeration value="SCMT"/>
+ *     &lt;enumeration value="SMIL"/>
+ *     &lt;enumeration value="SQMI"/>
+ *     &lt;enumeration value="SQYA"/>
+ *     &lt;enumeration value="SQFO"/>
+ *     &lt;enumeration value="SQIN"/>
+ *     &lt;enumeration value="ACRE"/>
+ *   &lt;/restriction>
+ * &lt;/simpleType>
+ * </pre>
+ * 
+ */
+@XmlType(name = "UnitOfMeasure1Code")
+@XmlEnum
+public enum UnitOfMeasure1Code {
+
+    PIEC,
+    TONS,
+    FOOT,
+    GBGA,
+    USGA,
+    GRAM,
+    INCH,
+    KILO,
+    PUND,
+    METR,
+    CMET,
+    MMET,
+    LITR,
+    CELI,
+    MILI,
+    GBOU,
+    USOU,
+    GBQA,
+    USQA,
+    GBPI,
+    USPI,
+    MILE,
+    KMET,
+    YARD,
+    SQKI,
+    HECT,
+    ARES,
+    SMET,
+    SCMT,
+    SMIL,
+    SQMI,
+    SQYA,
+    SQFO,
+    SQIN,
+    ACRE;
+
+    public String value() {
+        return name();
+    }
+
+    public static UnitOfMeasure1Code fromValue(String v) {
+        return valueOf(v);
+    }
+
+}
