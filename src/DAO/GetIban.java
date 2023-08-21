@@ -16,20 +16,26 @@ public class GetIban {
 
 	public static String getIbanWithTransactionID(String TransactionID) {
 		try {
-			String sqlQuery = "SELECT EUPAVIPDT || EUPAVIIDS || EUPAVIBDT IBAN  FROM GDEV.ZEUPAVI0 WHERE EUPAVITXI ='"
-					+ TransactionID + "'";
-			System.out.println("solution 1");
-			System.out.println(sqlQuery);
+			String s ="SELECT EUPAVIPDT || EUPAVIIDS || EUPAVIBDT IBAN,EUPAVITXI TransactionID  FROM GDEV.ZEUPAVI0 WHERE EUPAVITXI  LIKE '%"+TransactionID+"%'";
+
+	
+			//System.out.println("solution 1");
+			//System.out.println(s);
+
 			// Execute the query and process the results
 			Statement statement = con.createStatement();
-			ResultSet resultSet = statement.executeQuery(sqlQuery);
+			ResultSet tranId = statement.executeQuery(s);
 
-			while (resultSet.next()) {
-				return resultSet.getString("IBAN");
+			while (tranId.next()) {
+				String t = tranId.getString("TransactionID").trim();
+				if(t.equals(TransactionID)) {
+					return tranId.getString("IBAN").trim();
+				}
 			}
+			
 
 			// Close the resources
-			resultSet.close();
+			tranId.close();
 			statement.close();
 
 		} catch (SQLException e) {
