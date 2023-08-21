@@ -85,8 +85,13 @@ public class Main {
 									allTxDtls.addAll(e.getTxDtls());
 								}
 								for (EntryTransaction2 txD : allTxDtls) {
+<<<<<<< HEAD
 									
 							/*		if (elem.getNtryDtls() != null && txD != null && txD.getRefs() != null
+=======
+									//System.out.println("TransactionID :" + txD.getRefs().getAcctSvcrRef() );
+									if (elem.getNtryDtls() != null && txD != null && txD.getRefs() != null
+>>>>>>> 09dbb99cb6286d8d91733da55e1bce4073e1a808
 											&& txD.getRefs().getAcctSvcrRef() != null
 											&& GetIban.getIbanWithTransactionID(txD.getRefs().getAcctSvcrRef()) != null) {
 										System.out.println("TransactionID :" + txD.getRefs().getAcctSvcrRef() + "==>iban1:"
