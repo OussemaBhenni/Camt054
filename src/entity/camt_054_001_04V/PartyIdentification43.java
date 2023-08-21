@@ -43,12 +43,15 @@ import javax.xml.bind.annotation.XmlType;
     "pstlAdr",
     "id",
     "ctryOfRes",
-    "ctctDtls"
+    "ctctDtls",
+    "IBAN"
 })
 public class PartyIdentification43 {
 
     @XmlElement(name = "Nm")
     protected String nm;
+    @XmlElement(name = "IBAN")
+    protected String IBAN;
     @XmlElement(name = "PstlAdr")
     protected PostalAddress6 pstlAdr;
     @XmlElement(name = "Id")
@@ -69,8 +72,19 @@ public class PartyIdentification43 {
     public String getNm() {
         return nm;
     }
+    
 
-    /**
+    public String getIBAN() {
+		return IBAN;
+	}
+
+
+	public void setIBAN(String iBAN) {
+		IBAN = iBAN;
+	}
+
+
+	/**
      * D�finit la valeur de la propri�t� nm.
      * 
      * @param value

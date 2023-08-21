@@ -37,12 +37,15 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Party40Choice", propOrder = {
     "pty",
-    "agt"
+    "agt",
+    "IBAN"
 })
 public class Party40Choice {
 
     @XmlElement(name = "Pty")
     protected PartyIdentification135 pty;
+    @XmlElement(name = "IBAN")
+    protected String IBAN;
     @XmlElement(name = "Agt")
     protected BranchAndFinancialInstitutionIdentification6 agt;
 
@@ -58,7 +61,15 @@ public class Party40Choice {
         return pty;
     }
 
-    /**
+    public String getIBAN() {
+		return IBAN;
+	}
+
+	public void setIBAN(String iBAN) {
+		IBAN = iBAN;
+	}
+
+	/**
      * D�finit la valeur de la propri�t� pty.
      * 
      * @param value
