@@ -31,10 +31,10 @@ public class Main {
 	public static void main(String[] args) {
 		try {
 			// Set the system property to use the EclipseLink MOXy implementation
-			System.setProperty("javax.xml.bind.context.factory", "org.eclipse.persistence.jaxb.JAXBContextFactory");
+			
 
 			// Path to the folder containing XML files
-			String folderPath = "C:\\Users\\obenhenni\\Downloads\\Flux CAMT054 AT6.22.3";
+			String folderPath = "C:\\Users\\iberrichi\\Downloads\\Flux CAMT054 AT6.22.3";
 
 			// Get all XML files in the folder
 			File folder = new File(folderPath);
@@ -85,11 +85,10 @@ public class Main {
 									allTxDtls.addAll(e.getTxDtls());
 								}
 								for (EntryTransaction2 txD : allTxDtls) {
-									System.out.println("TransactionID :" + txD.getRefs().getAcctSvcrRef() + "==>iban1:"
-											+ GetIban.getIbanWithTransactionID(txD.getRefs().getAcctSvcrRef()));
-									if (elem.getNtryDtls() != null && txD != null && txD.getRefs() != null
+									
+							/*		if (elem.getNtryDtls() != null && txD != null && txD.getRefs() != null
 											&& txD.getRefs().getAcctSvcrRef() != null
-											/*&& GetIban.getIbanWithTransactionID(txD.getRefs().getAcctSvcrRef()) != null*/) {
+											&& GetIban.getIbanWithTransactionID(txD.getRefs().getAcctSvcrRef()) != null) {
 										System.out.println("TransactionID :" + txD.getRefs().getAcctSvcrRef() + "==>iban1:"
 												+ GetIban.getIbanWithTransactionID(txD.getRefs().getAcctSvcrRef()));
 
@@ -110,7 +109,7 @@ public class Main {
 												.setIban(GetIban.getIbanWithEndToEndID(txD.getRefs().getEndToEndId()));
 										affected = true;
 
-									} else if (elem.getAmt() != null && elem.getAmt().getValue() != null
+									} else*/ if (elem.getAmt() != null && elem.getAmt().getValue() != null
 											&& elem.getAmt().getCcy() != null && elem.getValDt() != null
 											&& elem.getValDt().getDt() != null && elem.getNtryDtls() != null && txD != null
 											&& txD.getRltdPties() != null && txD.getRltdPties().getDbtr() != null
@@ -141,7 +140,7 @@ public class Main {
 						}
 						if (affected) {
 							affected = false;
-							String outputFolderPath = "C:\\Users\\obenhenni\\Documents\\Result\\";
+							String outputFolderPath = "C:\\Users\\iberrichi\\resultat\\";
 
 							// Create the output file stream and writer
 							FileOutputStream fos = new FileOutputStream(outputFolderPath + file.getName());

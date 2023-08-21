@@ -67,7 +67,7 @@ public class GetIban {
 	public static String getIbanWithMontantDeviseDate(BigDecimal montant, String devise, XMLGregorianCalendar date,
 	        String nomDuDonneurDordre) {
 	    try {
-	        String sqlQuery = "SELECT EUPAVIPDT || EUPAVIIDS || EUPAVIBDT IBAN FROM GDEV.ZEUPAVI0 WHERE EUPAVICOP ='R0V' AND EUPAVIMON = ?"
+	        String sqlQuery = "SELECT EUPAVIPDT || EUPAVIIDS || EUPAVIBDT IBAN FROM GDEV.ZEUPAVI0 WHERE EUPAVIMON = ?"
 	                + " and EUPAVIDEV = ? and EUPAVIDVA = ? and EUPAVINDO = ?";
 	        
 	        // Execute the query and process the results
@@ -90,22 +90,18 @@ public class GetIban {
 	        statement.setInt(3, new Integer("1"+date.getYear()%100+s+j));
 	        
 	        statement.setString(4, nomDuDonneurDordre);
+	        System.out.println("SELECT EUPAVIPDT || EUPAVIIDS || EUPAVIBDT IBAN FROM GDEV.ZEUPAVI0 WHERE EUPAVIMON = "+montant+"and EUPAVIDEV = "+devise+" and EUPAVIDVA = "+new Integer("1"+date.getYear()%100+s+j)+" and EUPAVINDO = "+nomDuDonneurDordre);
 
 
 	        
 	        ResultSet resultSet = statement.executeQuery();
-	        //System.out.println("solution 3");
+	        System.out.println(resultSet.next());
 	        
 	        	
-	        //System.out.println( new Integer("1"+date.getYear()%100+s+date.getDay()));
-	        if(new String(nomDuDonneurDordre).contains("'")== false) {
-	        	//System.out.println(new String("SELECT EUPAVIPDT || EUPAVIIDS || EUPAVIBDT IBAN FROM GDEV.ZEUPAVI0 WHERE EUPAVICOP ='R0V' AND EUPAVIMON = "+montant
-		        //		+ " and EUPAVIDEV = '"+devise+"' and EUPAVIDVA = "+"1"+date.getYear()%100+s+j+" and EUPAVINDO = '"+nomDuDonneurDordre+"';"));
-		        
-	        }
+	        
 	       
 	        while (resultSet.next()) {
-	        	System.out.println(resultSet.getString("IBAN"));
+	        	System.out.println("Iban =====>"+resultSet.getString("IBAN"));
 	            return resultSet.getString("IBAN");
 	        }
 

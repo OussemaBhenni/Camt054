@@ -2,6 +2,7 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
 		<attributes>
+			<attribute name="module" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
@@ -11,14 +12,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/obenhenni/Downloads/jaxb-api-2.2.jar/jaxb-api-2.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/obenhenni/Downloads/jar_files/jaxb-xjc-4.0.3.jar"/>
-	<classpathentry kind="lib" path="lib/jaxb-core-4.0.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/obenhenni/Downloads/org.eclipse.persistence.moxy.jar/org.eclipse.persistence.moxy.jar"/>
-	<classpathentry kind="lib" path="C:/Users/obenhenni/Downloads/javax.json-1.0.jar/javax.json-1.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/obenhenni/Downloads/ojdbc8.jar"/>
-	<classpathentry kind="lib" path="C:/Users/obenhenni/Downloads/jaxb-runtime-2.3.1-javadoc.jar"/>
-	<classpathentry kind="lib" path="C:/Users/obenhenni/Downloads/jaxws-api-2.3.1-javadoc.jar"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
