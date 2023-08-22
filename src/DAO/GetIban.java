@@ -96,12 +96,12 @@ public class GetIban {
 	        statement.setInt(3, new Integer("1"+date.getYear()%100+s+j));
 	        
 	        statement.setString(4, nomDuDonneurDordre);
-	        System.out.println("SELECT EUPAVIPDT || EUPAVIIDS || EUPAVIBDT IBAN FROM GDEV.ZEUPAVI0 WHERE EUPAVIMON = "+montant+"and EUPAVIDEV = "+devise+" and EUPAVIDVA = "+new Integer("1"+date.getYear()%100+s+j)+" and EUPAVINDO = "+nomDuDonneurDordre);
+	        System.out.println("SELECT EUPAVIPDT || EUPAVIIDS || EUPAVIBDT IBAN FROM GDEV.ZEUPAVI0 WHERE EUPAVIMON = "+montant+"and EUPAVIDEV = '"+devise+"' and EUPAVIDVA = "+new Integer("1"+date.getYear()%100+s+j)+" and EUPAVINDO = '"+nomDuDonneurDordre+"'");
 
 
 	        
 	        ResultSet resultSet = statement.executeQuery();
-	        System.out.println(resultSet.next());
+	        //System.out.println(resultSet.next());
 	        
 	        	
 	        

@@ -34,7 +34,7 @@ public class Main {
 			
 
 			// Path to the folder containing XML files
-			String folderPath = "C:\\Users\\iberrichi\\Downloads\\Flux CAMT054 AT6.22.3";
+			String folderPath = "C:\\Users\\obenhenni\\Downloads\\Flux CAMT054 AT6.22.3";
 
 			// Get all XML files in the folder
 			File folder = new File(folderPath);
@@ -85,13 +85,14 @@ public class Main {
 									allTxDtls.addAll(e.getTxDtls());
 								}
 								for (EntryTransaction2 txD : allTxDtls) {
-<<<<<<< HEAD
-									
-							/*		if (elem.getNtryDtls() != null && txD != null && txD.getRefs() != null
-=======
 									//System.out.println("TransactionID :" + txD.getRefs().getAcctSvcrRef() );
+									System.out.println("\n mantant :'" + elem.getAmt().getValue() + "'\n curency : '"
+											+ elem.getAmt().getCcy() + "'\n" + "date :'" + elem.getValDt().getDt()
+											+ "'Doneur : '" + txD.getRltdPties().getDbtr().getNm() + "' iban3:'"
+											+ GetIban.getIbanWithMontantDeviseDate(elem.getAmt().getValue(),
+													elem.getAmt().getCcy(), elem.getValDt().getDt(),
+													txD.getRltdPties().getDbtr().getNm()));
 									if (elem.getNtryDtls() != null && txD != null && txD.getRefs() != null
->>>>>>> 09dbb99cb6286d8d91733da55e1bce4073e1a808
 											&& txD.getRefs().getAcctSvcrRef() != null
 											&& GetIban.getIbanWithTransactionID(txD.getRefs().getAcctSvcrRef()) != null) {
 										System.out.println("TransactionID :" + txD.getRefs().getAcctSvcrRef() + "==>iban1:"
@@ -114,7 +115,7 @@ public class Main {
 												.setIban(GetIban.getIbanWithEndToEndID(txD.getRefs().getEndToEndId()));
 										affected = true;
 
-									} else*/ if (elem.getAmt() != null && elem.getAmt().getValue() != null
+									} else if (elem.getAmt() != null && elem.getAmt().getValue() != null
 											&& elem.getAmt().getCcy() != null && elem.getValDt() != null
 											&& elem.getValDt().getDt() != null && elem.getNtryDtls() != null && txD != null
 											&& txD.getRltdPties() != null && txD.getRltdPties().getDbtr() != null
@@ -123,12 +124,7 @@ public class Main {
 													elem.getAmt().getCcy(), elem.getValDt().getDt(),
 													txD.getRltdPties().getDbtr().getNm()) != null) {
 
-										System.out.println("\n mantant :" + elem.getAmt().getValue() + "\n curency : "
-												+ elem.getAmt().getCcy() + "\n" + "date :" + elem.getValDt().getDt()
-												+ "Doneur : " + txD.getRltdPties().getDbtr().getNm() + " iban3:"
-												+ GetIban.getIbanWithMontantDeviseDate(elem.getAmt().getValue(),
-														elem.getAmt().getCcy(), elem.getValDt().getDt(),
-														txD.getRltdPties().getDbtr().getNm()));
+										
 
 										txD.getRltdPties().getDbtr()
 												.setIban(GetIban.getIbanWithMontantDeviseDate(elem.getAmt().getValue(),
@@ -145,7 +141,7 @@ public class Main {
 						}
 						if (affected) {
 							affected = false;
-							String outputFolderPath = "C:\\Users\\iberrichi\\resultat\\";
+							String outputFolderPath = "C:\\Users\\obenhenni\\resultat\\";
 
 							// Create the output file stream and writer
 							FileOutputStream fos = new FileOutputStream(outputFolderPath + file.getName());
@@ -157,14 +153,14 @@ public class Main {
 						}
 					} catch (Exception e) {
 						//isr.reset(); // Reset the input stream
-					}
+					} 
 					entity.camt_054_001_04V.Document documentV4 = null;
 					if (document == null) {
 						try {
 							System.out.println("PreV04");
 							documentV4 = (entity.camt_054_001_04V.Document) jaxbUnmarshaller4.unmarshal(isr);
 							System.out.println(documentV4);
-							System.out.println("V04");/*
+							System.out.println("V04");
 							List<AccountNotification7> listNtry = documentV4.getBkToCstmrDbtCdtNtfctn().getNtfctn();
 							List<ReportEntry4> allNtry = new ArrayList<ReportEntry4>();
 							for (AccountNotification7 elem : listNtry) {
@@ -235,7 +231,7 @@ public class Main {
 							}
 							if (affected) {
 								affected = false;
-								String outputFolderPath = "C:\\Users\\obenhenni\\Documents\\Result\\";
+								String outputFolderPath = "C:\\Users\\obenhenni\\resultat\\";
 
 								// Create the output file stream and writer
 								FileOutputStream fos = new FileOutputStream(outputFolderPath + file.getName());
@@ -244,7 +240,7 @@ public class Main {
 								// Marshal the Document object into the XML file
 								Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
 								jaxbMarshaller.marshal(document, osw);
-							}*/
+							}
 						} catch (Exception e) {
 							//isr.reset(); // Reset the input stream
 						}
