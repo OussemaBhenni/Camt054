@@ -26,6 +26,10 @@ import entity.camt_054_001_04V.AccountNotification7;
 import entity.camt_054_001_04V.EntryDetails3;
 import entity.camt_054_001_04V.EntryTransaction4;
 import entity.camt_054_001_04V.ReportEntry4;
+import entity.camt_054_001_08V.AccountNotification17;
+import entity.camt_054_001_08V.EntryDetails9;
+import entity.camt_054_001_08V.EntryTransaction10;
+import entity.camt_054_001_08V.ReportEntry10;
 
 public class Main {
 	public static void main(String[] args) {
@@ -51,11 +55,11 @@ public class Main {
 
 				JAXBContext jaxbContext = JAXBContext.newInstance(entity.camt_054_001_02V.Document.class);
 				JAXBContext jaxbContext4 = JAXBContext.newInstance(entity.camt_054_001_04V.Document.class);
-				JAXBContext jaxbContext3 = JAXBContext.newInstance(entity.camt_054_001_08V.Document.class);
+				JAXBContext jaxbContext8 = JAXBContext.newInstance(entity.camt_054_001_08V.Document.class);
 
 				Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 				Unmarshaller jaxbUnmarshaller4 = jaxbContext4.createUnmarshaller();
-				Unmarshaller jaxbUnmarshaller3 = jaxbContext3.createUnmarshaller();
+				Unmarshaller jaxbUnmarshaller8 = jaxbContext8.createUnmarshaller();
 
 				FileInputStream fis = null;
 				InputStreamReader isr = null;
@@ -268,13 +272,107 @@ public class Main {
 							e.printStackTrace();
 						}
 					}
+					entity.camt_054_001_08V.Document documentV8 = null;
 
-					if (documentV4 == null) {
+					if (documentV8 == null) {
 						try {
-							document = (Document) jaxbUnmarshaller3.unmarshal(isr);
-							System.out.println("V08");
+							fis = new FileInputStream(file);
+							isr = new InputStreamReader(fis, StandardCharsets.UTF_8);
+							
+							
+							if (jaxbUnmarshaller8.unmarshal(isr) instanceof entity.camt_054_001_08V.Document) {
+								documentV8 = (entity.camt_054_001_08V.Document) jaxbUnmarshaller8.unmarshal(isr);
+							    
+							
+							
+							
+							System.out.println(file.getName()+" its  A camt.054.001.08 version ");
+							List<AccountNotification17> listNtry = documentV8.getBkToCstmrDbtCdtNtfctn().getNtfctn();
+							List<ReportEntry10> allNtry = new ArrayList<ReportEntry10>();
+							for (AccountNotification17 elem : listNtry) {
+								allNtry.addAll(elem.getNtry());
+							}
+
+							for (ReportEntry10 elem : allNtry) {
+								if (elem.getBkTxCd().getDomn().getCd().equals("PMNT")
+										&& elem.getBkTxCd().getDomn().getFmly().getCd().equals("RCDT")
+										&& elem.getBkTxCd().getDomn().getFmly().getSubFmlyCd().equals("ESCT")) {
+									// System.out.println("ROV");
+									List<EntryTransaction10> allTxDtls = new ArrayList<EntryTransaction10>();
+									for (EntryDetails9 e : elem.getNtryDtls()) {
+										allTxDtls.addAll(e.getTxDtls());
+									}
+									for (EntryTransaction10 txD : allTxDtls) {
+										if (elem.getNtryDtls() != null && txD != null && txD.getRefs() != null
+												&& txD.getRefs().getAcctSvcrRef() != null
+												&& GetIban.getIbanWithTransactionID(txD.getRefs().getAcctSvcrRef()) != null) {
+											System.out.println("TransactionID :" + txD.getRefs().getAcctSvcrRef() + "==>iban1:"
+													+ GetIban.getIbanWithTransactionID(txD.getRefs().getAcctSvcrRef()));
+
+											txD.getRltdPties().getDbtr()
+													.setIBAN(GetIban.getIbanWithTransactionID(txD.getRefs().getAcctSvcrRef()));
+											affected = true;
+
+										}
+
+										else if (elem.getNtryDtls() != null && txD != null && txD.getRefs() != null
+												&& txD.getRefs().getEndToEndId() != null
+												&& GetIban.getIbanWithEndToEndID(txD.getRefs().getEndToEndId()) != null) {
+											// System.out.println("EndToEndID
+											// :"+elem.getNtryDtls().getTxDtls().getRefs().getEndToEndId()
+											// +"==>iban2:"+GetIban.getIbanWithEndToEndID(elem.getNtryDtls().getTxDtls().getRefs().getEndToEndId()));
+
+											txD.getRltdPties().getDbtr()
+													.setIBAN(GetIban.getIbanWithEndToEndID(txD.getRefs().getEndToEndId()));
+											affected = true;
+
+										} else if (elem.getAmt() != null && elem.getAmt().getValue() != null
+												&& elem.getAmt().getCcy() != null && elem.getValDt() != null
+												&& elem.getValDt().getDt() != null && elem.getNtryDtls() != null && txD != null
+												&& txD.getRltdPties() != null && txD.getRltdPties().getDbtr() != null
+												&& txD.getRltdPties().getDbtr().getPty().getNm() != null
+												&& GetIban.getIbanWithMontantDeviseDate(elem.getAmt().getValue(),
+														elem.getAmt().getCcy(), elem.getValDt().getDt(),
+														txD.getRltdPties().getDbtr().getPty().getNm()) != null) {
+
+											System.out.println("\n mantant :" + elem.getAmt().getValue() + "\n curency : "
+													+ elem.getAmt().getCcy() + "\n" + "date :" + elem.getValDt().getDt()
+													+ "Doneur : " + txD.getRltdPties().getDbtr().getPty().getNm() + " iban3:"
+													+ GetIban.getIbanWithMontantDeviseDate(elem.getAmt().getValue(),
+															elem.getAmt().getCcy(), elem.getValDt().getDt(),
+															txD.getRltdPties().getDbtr().getPty().getNm()));
+
+											txD.getRltdPties().getDbtr()
+													.setIBAN(GetIban.getIbanWithMontantDeviseDate(elem.getAmt().getValue(),
+															elem.getAmt().getCcy(), elem.getValDt().getDt(),
+															txD.getRltdPties().getDbtr().getPty().getNm()));
+											affected = true;
+
+										}
+
+									}
+
+								}
+
+							}
+							if (affected) {
+								affected = false;
+								String outputFolderPath = "C:\\Users\\obenhenni\\resultat\\";
+
+								// Create the output file stream and writer
+								FileOutputStream fos = new FileOutputStream(outputFolderPath + file.getName());
+								OutputStreamWriter osw = new OutputStreamWriter(fos, StandardCharsets.UTF_8);
+
+								// Marshal the Document object into the XML file
+								Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+								jaxbMarshaller.marshal(document, osw);
+							}
+							} else {
+							    System.out.println(file.getName()+" its not A camt.054.001.04 version ");
+							}
 						} catch (Exception e) {
-							// Handle the case when none of the versions match
+							//isr.reset(); // Reset the input stream
+							e.printStackTrace();
 						}
 					}
 
