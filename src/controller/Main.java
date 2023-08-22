@@ -69,7 +69,7 @@ public class Main {
 						fis = new FileInputStream(file);
 						isr = new InputStreamReader(fis, StandardCharsets.UTF_8);
 						document = (Document) jaxbUnmarshaller.unmarshal(isr);
-						System.out.println(file.getName()+" its  A camt.054.001.02 version ");
+						//System.out.println(file.getName()+" its  A camt.054.001.02 version ");
 						List<AccountNotification2> listNtry = document.getBkToCstmrDbtCdtNtfctn().getNtfctn();
 						List<ReportEntry2> allNtry = new ArrayList<ReportEntry2>();
 						for (AccountNotification2 elem : listNtry) {
@@ -179,7 +179,7 @@ public class Main {
 							
 							
 							System.out.println(documentV4);
-							System.out.println("V04");
+							System.out.println(file.getName()+" its  A camt.054.001.04 version ");
 							List<AccountNotification7> listNtry = documentV4.getBkToCstmrDbtCdtNtfctn().getNtfctn();
 							List<ReportEntry4> allNtry = new ArrayList<ReportEntry4>();
 							for (AccountNotification7 elem : listNtry) {
