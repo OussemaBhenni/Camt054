@@ -61,14 +61,15 @@ public class Main {
 				InputStreamReader isr = null;
 
 				try {
-					fis = new FileInputStream(file);
-					isr = new InputStreamReader(fis, StandardCharsets.UTF_8);
+					
 
 					Document document = null;
 
 					try {
+						fis = new FileInputStream(file);
+						isr = new InputStreamReader(fis, StandardCharsets.UTF_8);
 						document = (Document) jaxbUnmarshaller.unmarshal(isr);
-						System.out.println("V02");
+						System.out.println(file.getName()+" its  A camt.054.001.02 version ");
 						List<AccountNotification2> listNtry = document.getBkToCstmrDbtCdtNtfctn().getNtfctn();
 						List<ReportEntry2> allNtry = new ArrayList<ReportEntry2>();
 						for (AccountNotification2 elem : listNtry) {
@@ -90,8 +91,8 @@ public class Main {
 									if (elem.getNtryDtls() != null && txD != null && txD.getRefs() != null
 											&& txD.getRefs().getAcctSvcrRef() != null
 											&& GetIban.getIbanWithTransactionID(txD.getRefs().getAcctSvcrRef()) != null) {
-										System.out.println("TransactionID :" + txD.getRefs().getAcctSvcrRef() + "==>iban1:"
-												+ GetIban.getIbanWithTransactionID(txD.getRefs().getAcctSvcrRef()));
+										//System.out.println("TransactionID :" + txD.getRefs().getAcctSvcrRef() + "==>iban1:"
+										//		+ GetIban.getIbanWithTransactionID(txD.getRefs().getAcctSvcrRef()));
 
 										txD.getRltdPties().getDbtr()
 												.setIban(GetIban.getIbanWithTransactionID(txD.getRefs().getAcctSvcrRef()));
@@ -168,8 +169,15 @@ public class Main {
 					entity.camt_054_001_04V.Document documentV4 = null;
 					if (document == null) {
 						try {
-							System.out.println("PreV04");
-							documentV4 = (entity.camt_054_001_04V.Document) jaxbUnmarshaller4.unmarshal(isr);
+							fis = new FileInputStream(file);
+							isr = new InputStreamReader(fis, StandardCharsets.UTF_8);
+							//System.out.println("PreV04");
+							
+							if (jaxbUnmarshaller4.unmarshal(isr) instanceof entity.camt_054_001_04V.Document) {
+								documentV4 = (entity.camt_054_001_04V.Document) jaxbUnmarshaller4.unmarshal(isr);
+							    // ... (rest of your processing code for V04)
+							
+							
 							System.out.println(documentV4);
 							System.out.println("V04");
 							List<AccountNotification7> listNtry = documentV4.getBkToCstmrDbtCdtNtfctn().getNtfctn();
@@ -251,6 +259,9 @@ public class Main {
 								// Marshal the Document object into the XML file
 								Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
 								jaxbMarshaller.marshal(document, osw);
+							}
+							} else {
+							    System.out.println(file.getName()+" its not A camt.054.001.04 version ");
 							}
 						} catch (Exception e) {
 							//isr.reset(); // Reset the input stream
