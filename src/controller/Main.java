@@ -86,12 +86,7 @@ public class Main {
 								}
 								for (EntryTransaction2 txD : allTxDtls) {
 									//System.out.println("TransactionID :" + txD.getRefs().getAcctSvcrRef() );
-									System.out.println("\n mantant :'" + elem.getAmt().getValue() + "'\n curency : '"
-											+ elem.getAmt().getCcy() + "'\n" + "date :'" + elem.getValDt().getDt()
-											+ "'Doneur : '" + txD.getRltdPties().getDbtr().getNm() + "' iban3:'"
-											+ GetIban.getIbanWithMontantDeviseDate(elem.getAmt().getValue(),
-													elem.getAmt().getCcy(), elem.getValDt().getDt(),
-													txD.getRltdPties().getDbtr().getNm()));
+									
 									if (elem.getNtryDtls() != null && txD != null && txD.getRefs() != null
 											&& txD.getRefs().getAcctSvcrRef() != null
 											&& GetIban.getIbanWithTransactionID(txD.getRefs().getAcctSvcrRef()) != null) {
@@ -153,7 +148,23 @@ public class Main {
 						}
 					} catch (Exception e) {
 						//isr.reset(); // Reset the input stream
-					} 
+					} finally {
+			            // Close the input streams in the finally block
+			            if (isr != null) {
+			                try {
+			                    isr.close();
+			                } catch (IOException e) {
+			                    e.printStackTrace();
+			                }
+			            }
+			            if (fis != null) {
+			                try {
+			                    fis.close();
+			                } catch (IOException e) {
+			                    e.printStackTrace();
+			                }
+			            }
+			        }
 					entity.camt_054_001_04V.Document documentV4 = null;
 					if (document == null) {
 						try {
@@ -243,6 +254,7 @@ public class Main {
 							}
 						} catch (Exception e) {
 							//isr.reset(); // Reset the input stream
+							e.printStackTrace();
 						}
 					}
 
