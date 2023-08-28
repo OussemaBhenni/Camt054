@@ -274,7 +274,7 @@ public class Main {
 					}
 					entity.camt_054_001_08V.Document documentV8 = null;
 
-					if (documentV8 == null) {
+					if (documentV4 == null && document == null) {
 						try {
 							fis = new FileInputStream(file);
 							isr = new InputStreamReader(fis, StandardCharsets.UTF_8);
